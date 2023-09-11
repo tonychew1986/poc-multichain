@@ -15,6 +15,18 @@ Implementation reference
 Refer to https://iancoleman.io/bip39/
 
 
+Feature Readiness
+----------------
+
+| Blockchain        | Gen key + address           | Signing  |
+| ------------- |:-------------:| -----:|
+| Bitcoin      | Yes | No |
+| Litecoin     | Yes      |   No |
+| Ethereum | Yes      |    Yes |
+| Bitcoin Cash | No      |    No |
+| Cosmos | No      |    No |
+
+
 ## Instructions
 
 To run code script:

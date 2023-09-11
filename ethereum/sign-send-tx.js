@@ -92,6 +92,10 @@ async function main() {
     // });
     // console.log('tx ', tx)
 
+    // erc20
+    // multisig
+    // nft
+
 }
 
 main()
