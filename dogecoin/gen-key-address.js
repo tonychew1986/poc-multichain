@@ -36,8 +36,8 @@ const DOGECOIN = {
     messagePrefix: '\x19Dogecoin Signed Message:\n',
     // bech32: 'doge',
     bip32: {
-        public: 0x02FACAFD,
-        private: 0x02FAC398,
+        public: 0x02facafd,
+        private: 0x02fac398,
     },
     pubKeyHash: 0x1E,
     scriptHash: 0x16,
@@ -60,7 +60,7 @@ console.log("xpub ", xpub);
 
 let data = b58.decode(xpub)
 data = data.slice(4);
-data = Buffer.concat([Buffer.from('0x02FAC398','hex'), data]); // see https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014907.html for tenative (non-BIP-official) version bytes
+data = Buffer.concat([Buffer.from('02facafd','hex'), data]); // see https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014907.html for tenative (non-BIP-official) version bytes
 let dgub = b58.encode(data);
 console.log("dgub ", dgub);
 
