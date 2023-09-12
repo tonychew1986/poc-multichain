@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@hashgraph/sdk": "^2.33.0",
     "algosdk": "^2.5.0",
     "bchaddrjs": "^0.5.2",
     "bip32": "^4.0.0",

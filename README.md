@@ -66,7 +66,7 @@ Feature Readiness
 | Avalanche | &cross;      |    &cross; | &cross; | &cross; | &cross; |
 | Ethereum Classic | &cross;      |    &cross; | &cross; | &cross; | &cross; |
 | Algorand | &cross;      |    &cross; | &cross; | &cross; | &cross; |
-| Hedera | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Hedera | &cross;      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: |
 | Filecoin | &cross;      |    &cross; | &cross; | &cross; | &cross; |
 | Arbitrum | &cross;      |    &cross; | &cross; | &cross; | &cross; |
 | Aptos | &cross;      |    &cross; | &cross; | &cross; | &cross; |
