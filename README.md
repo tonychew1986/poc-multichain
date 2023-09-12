@@ -20,63 +20,63 @@ Feature Readiness
 
 ## Mainnet
 
-| Blockchain        | Gen key + address           | Single sig signing  | Combine multisig  | Multi sig signing  |
-| ------------- |:-------------:| -----:|-----:|-----:|
-| Bitcoin      | :heavy_check_mark: | &cross; | &cross; | &cross; |
-| Litecoin     | :heavy_check_mark:      |   &cross; | &cross; | &cross; |
-| Ethereum | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; |
-| Bitcoin Cash | :heavy_check_mark:      |    &cross; | &cross; | &cross; |
-| Cosmos | :construction:      |    &cross; | &cross; | &cross; |
-| Binance Smart Chain | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; |
-| Dogecoin | :construction:      |    &cross; | &cross; | &cross; |
-| Dash | :heavy_check_mark:      |    &cross; | &cross; | &cross; |
-| Tron | &cross;      |    &cross; | &cross; | &cross; |
-| Polygon | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; |
-| Solana | &cross;      |    &cross; | &cross; | &cross; |
-| Avalanche | &cross;      |    &cross; | &cross; | &cross; |
-| Ethereum Classic | &cross;      |    &cross; | &cross; | &cross; |
-| Algorand | :construction:      |    &cross; | &cross; | &cross; |
-| Hedera | &cross;      |    &cross; | &cross; | &cross; |
-| Filecoin | &cross;      |    &cross; | &cross; | &cross; |
-| Arbitrum | &cross;      |    &cross; | &cross; | &cross; |
-| Aptos | &cross;      |    &cross; | &cross; | &cross; |
-| TonCoin | &cross;      |    &cross; | &cross; | &cross; |
-| Optimism | &cross;      |    &cross; | &cross; | &cross; |
-| Sui | &cross;      |    &cross; | &cross; | &cross; |
-| Stellar | &cross;      |    &cross; | &cross; | &cross; |
-| Ripple | &cross;      |    &cross; | &cross; | &cross; |
-| Decred | &cross;      |    &cross; | &cross; | &cross; |
-| Nano | &cross;      |    &cross; | &cross; | &cross; |
+| Blockchain        | Gen key + address           | Single sig sign | Token Tx | Gen multisig  | Multi sig sign  |
+| ------------- |:-------------:| -----:|-----:|-----:|-----:|
+| Bitcoin      | :heavy_check_mark: | &cross; | &cross; | &cross; | &cross; |
+| Litecoin     | :heavy_check_mark:      |   &cross; | &cross; | &cross; | &cross; |
+| Ethereum | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | &cross; | &cross; |
+| Bitcoin Cash | :heavy_check_mark:      |    &cross; | &cross; | &cross; | &cross; |
+| Cosmos | :construction:      |    &cross; | &cross; | &cross; | &cross; |
+| Binance Smart Chain | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; | &cross; |
+| Dogecoin | :construction:      |    &cross; | &cross; | &cross; | &cross; |
+| Dash | :heavy_check_mark:      |    &cross; | &cross; | &cross; | &cross; |
+| Tron | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Polygon | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; | &cross; |
+| Solana | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Avalanche | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Ethereum Classic | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Algorand | :construction:      |    &cross; | &cross; | &cross; | &cross; |
+| Hedera | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Filecoin | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Arbitrum | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Aptos | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| TonCoin | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Optimism | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Sui | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Stellar | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Ripple | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Decred | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Nano | &cross;      |    &cross; | &cross; | &cross; | &cross; |
 
 ## Testnet
 
-| Blockchain        | Gen key + address           | Single sig signing  | Combine multisig  | Multi sig signing  |
-| ------------- |:-------------:| -----:|-----:|-----:|
-| Bitcoin      | :heavy_check_mark: | &cross; | &cross; | &cross; |
-| Litecoin     | :heavy_check_mark:      |   &cross; | &cross; | &cross; |
-| Ethereum (Goerli) | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; |
-| Bitcoin Cash | &cross;      |    &cross; | &cross; | &cross; |
-| Cosmos | &cross;      |    &cross; | &cross; | &cross; |
-| Binance Smart Chain | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; |
-| Dogecoin | :heavy_check_mark:      |    &cross; | &cross; | &cross; |
-| Dash | :heavy_check_mark:      |    &cross; | &cross; | &cross; |
-| Tron | &cross;      |    &cross; | &cross; | &cross; |
-| Polygon (Mumbai) | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; |
-| Solana | &cross;      |    &cross; | &cross; | &cross; |
-| Avalanche | &cross;      |    &cross; | &cross; | &cross; |
-| Ethereum Classic | &cross;      |    &cross; | &cross; | &cross; |
-| Algorand | &cross;      |    &cross; | &cross; | &cross; |
-| Hedera | &cross;      |    &cross; | &cross; | &cross; |
-| Filecoin | &cross;      |    &cross; | &cross; | &cross; |
-| Arbitrum | &cross;      |    &cross; | &cross; | &cross; |
-| Aptos | &cross;      |    &cross; | &cross; | &cross; |
-| TonCoin | &cross;      |    &cross; | &cross; | &cross; |
-| Optimism | &cross;      |    &cross; | &cross; | &cross; |
-| Sui | &cross;      |    &cross; | &cross; | &cross; |
-| Stellar | &cross;      |    &cross; | &cross; | &cross; |
-| Ripple | &cross;      |    &cross; | &cross; | &cross; |
-| Decred | &cross;      |    &cross; | &cross; | &cross; |
-| Nano | &cross;      |    &cross; | &cross; | &cross; |
+| Blockchain        | Gen key + address           | Single sig sign | Token Tx | Gen multisig  | Multi sig sign  |
+| ------------- |:-------------:| -----:|-----:|-----:|-----:|
+| Bitcoin      | :heavy_check_mark: | &cross; | &cross; | &cross; | &cross; |
+| Litecoin     | :heavy_check_mark:      |   &cross; | &cross; | &cross; | &cross; |
+| Ethereum (Goerli) | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | &cross; | &cross; |
+| Bitcoin Cash | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Cosmos | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Binance Smart Chain | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; | &cross; |
+| Dogecoin | :heavy_check_mark:      |    &cross; | &cross; | &cross; | &cross; |
+| Dash | :heavy_check_mark:      |    &cross; | &cross; | &cross; | &cross; |
+| Tron | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Polygon (Mumbai) | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; | &cross; |
+| Solana | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Avalanche | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Ethereum Classic | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Algorand | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Hedera | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Filecoin | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Arbitrum | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Aptos | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| TonCoin | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Optimism | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Sui | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Stellar | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Ripple | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Decred | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Nano | &cross;      |    &cross; | &cross; | &cross; | &cross; |
 
 
 ----------------

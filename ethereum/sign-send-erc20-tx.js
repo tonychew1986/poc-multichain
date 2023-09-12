@@ -1,11 +1,12 @@
 require("dotenv").config();
 var { ethers, JsonRpcProvider } = require('ethers')
 var HDNodeWallet = require('ethers/wallet')
+const fs = require('fs');
 
 var url = "https://mainnet.infura.io/v3/fa926a9d3c2a4067af17c4df5b3d6079"
 var sourceAddress = "0x17997E53C1a5066C463e5F0530414cB859dA0695"
 var destinationAddress = "0x0Af52045f63B109934db4b3a4020eF5CDc046BE6"
-var value = "0.01"
+//var value = "0.01"
 let chainId = 1 // mainnet
 
 const provider = new JsonRpcProvider(url);
@@ -13,15 +14,35 @@ const provider = new JsonRpcProvider(url);
 const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
 console.log('signer ', signer)
 
+const jsonFile = "./abi/abi.json";
+const abi=JSON.parse(fs.readFileSync(jsonFile));
+
+let tokenContract = "0xBA62BCfcAaFc6622853cca2BE6Ac7d845BC0f2Dc" // replace with token address on mainnet
+const contract = new ethers.Contract(tokenContract, abi, provider)
+
+const amount = ethers.parseUnits("1.0", 18);
+const data = contract.interface.encodeFunctionData("transfer", [destinationAddress, amount] )
+
 async function main() {
     const balance = await provider.getBalance(sourceAddress);
     console.log('balance ', balance)
 
-    let amt = ethers.parseEther(value)
+    const balanceToken = (await contract.balanceOf(sourceAddress)).toString();
+    console.log('balanceToken ', balanceToken)
+
+    //let amt = ethers.parseEther(value)
     let txCount = await provider.getTransactionCount(sourceAddress, "latest");
     var gasPrice  = await provider.getFeeData()
     console.log('gasPrice ', gasPrice)
-    let gasLimit = 250000
+
+    let gasLimit = await provider.estimateGas({
+        from: sourceAddress,
+        to: tokenContract,
+        value: ethers.parseUnits("0.000", "ether"),
+        data: data
+    });
+
+    // let gasLimit = 250000
 
     // sending of transaction without compiling unsigned transaction
     // const tx = await signer.sendTransaction({
@@ -38,9 +59,9 @@ async function main() {
         // EIP-1559 fields
         // maxFeePerGas: gasPrice.maxFeePerGas,
         // maxPriorityFeePerGas: gasPrice.maxPriorityFeePerGas,
-        to: destinationAddress,
-        value: amt,
-        // data: data,
+        to: tokenContract,
+        value: ethers.parseUnits("0.000", "ether"),
+        data: data,
         chainId: chainId,
         // EIP-2718
         // type: 0
