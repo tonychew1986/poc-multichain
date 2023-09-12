@@ -31,6 +31,16 @@ const root = bip32.fromSeed(seed)
 console.log("root ", root);
 
 var acct = root.derivePath("m/44'/118'/0'");
+const COSMOS = {
+    messagePrefix: '\x18Bitcoin Atom Signed Message:\n',
+    bip32: {
+        public: 0x0488B21E,
+        private: 0x0488ADE4,
+    },
+    pubKeyHash: 0x17,
+    scriptHash: 0x0a,
+    wif: 0x80,
+};
 
 const child1 = root.derivePath("m/44'/118'/0'/0/0")
 const child2 = root.derivePath("m/44'/118'/0'/0/1")
@@ -52,9 +62,9 @@ console.log("xpub ", xpub);
 // let zpub = b58.encode(data);
 // console.log("zpub ", zpub);
 
-// const child1Address = bitcoin.payments.p2wpkh({ pubkey: child1.publicKey }).address
-// const child2Address = bitcoin.payments.p2wpkh({ pubkey: child2.publicKey }).address
-// const child3Address = bitcoin.payments.p2wpkh({ pubkey: child3.publicKey }).address
+// const child1Address = bitcoin.payments.p2wpkh({ pubkey: child1.publicKey, network: COSMOS }).address
+// const child2Address = bitcoin.payments.p2wpkh({ pubkey: child2.publicKey, network: COSMOS }).address
+// const child3Address = bitcoin.payments.p2wpkh({ pubkey: child3.publicKey, network: COSMOS }).address
 
 // console.log("child1Address ", child1Address);
 // console.log("child2Address ", child2Address);

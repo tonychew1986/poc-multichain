@@ -28,7 +28,7 @@ Feature Readiness
 | Bitcoin Cash | &cross;      |    &cross; | &cross; | &cross; |
 | Cosmos | &cross;      |    &cross; | &cross; | &cross; |
 | Binance Smart Chain | &cross;      |    &cross; | &cross; | &cross; |
-| Dogecoin | :heavy_check_mark:      |    &cross; | &cross; | &cross; |
+| Dogecoin | :construction:      |    &cross; | &cross; | &cross; |
 | Dash | :heavy_check_mark:      |    &cross; | &cross; | &cross; |
 | Tron | &cross;      |    &cross; | &cross; | &cross; |
 | Polygon | &cross;      |    &cross; | &cross; | &cross; |
