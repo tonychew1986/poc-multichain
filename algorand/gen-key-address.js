@@ -91,3 +91,15 @@ console.log("account_mnemonic ", account_mnemonic);
 
 var recoveredAccount = algosdk.mnemonicToSecretKey(account_mnemonic);
 console.log("recoveredAccount ", recoveredAccount);
+
+// let testaddr = algosdk.encoding.encode_address(base64.b64decode("ZXUc/psAtm6K6AOMpvytibbSa8H6WFc6O8XTp/rHuEE="))
+// console.log("testaddr ", testaddr);
+
+const pk = algosdk.decodeAddress(keys["addr"]);
+console.log("pk ", pk,);
+const addr = algosdk.encodeAddress(pk.publicKey);
+console.log("addr ", addr);
+
+const b64Encoded = 'SGksIEknbSBkZWNvZGVkIGZyb20gYmFzZTY0';
+const b64Decoded = Buffer.from(b64Encoded, 'base64').toString();
+console.log(b64Encoded, b64Decoded);

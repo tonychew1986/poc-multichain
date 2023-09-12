@@ -27,7 +27,7 @@ Feature Readiness
 | Ethereum | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; |
 | Bitcoin Cash | :heavy_check_mark:      |    &cross; | &cross; | &cross; |
 | Cosmos | :construction:      |    &cross; | &cross; | &cross; |
-| Binance Smart Chain | &cross;      |    &cross; | &cross; | &cross; |
+| Binance Smart Chain | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; |
 | Dogecoin | :construction:      |    &cross; | &cross; | &cross; |
 | Dash | :heavy_check_mark:      |    &cross; | &cross; | &cross; |
 | Tron | &cross;      |    &cross; | &cross; | &cross; |
@@ -35,7 +35,7 @@ Feature Readiness
 | Solana | &cross;      |    &cross; | &cross; | &cross; |
 | Avalanche | &cross;      |    &cross; | &cross; | &cross; |
 | Ethereum Classic | &cross;      |    &cross; | &cross; | &cross; |
-| Algorand | &cross;      |    &cross; | &cross; | &cross; |
+| Algorand | :construction:      |    &cross; | &cross; | &cross; |
 | Hedera | &cross;      |    &cross; | &cross; | &cross; |
 | Filecoin | &cross;      |    &cross; | &cross; | &cross; |
 | Arbitrum | &cross;      |    &cross; | &cross; | &cross; |
@@ -57,7 +57,7 @@ Feature Readiness
 | Ethereum (Goerli) | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; |
 | Bitcoin Cash | &cross;      |    &cross; | &cross; | &cross; |
 | Cosmos | &cross;      |    &cross; | &cross; | &cross; |
-| Binance Smart Chain | &cross;      |    &cross; | &cross; | &cross; |
+| Binance Smart Chain | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; |
 | Dogecoin | :heavy_check_mark:      |    &cross; | &cross; | &cross; |
 | Dash | :heavy_check_mark:      |    &cross; | &cross; | &cross; |
 | Tron | &cross;      |    &cross; | &cross; | &cross; |
