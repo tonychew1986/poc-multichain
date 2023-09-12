@@ -89,7 +89,7 @@ async function main() {
     // For an EIP-1559 transaction, the maxFeePerGas and maxPriorityFeePerGas should be used.
 
     // For legacy transactions and networks which do not support EIP-1559, the gasPrice should be used.
-4
+
     // var gasEstimate = await provider.estimateGas({
     //     // Wrapped ETH address
     //     to: destinationAddress,
