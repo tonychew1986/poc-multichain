@@ -39,7 +39,7 @@ Feature Readiness
 | ------------- |:-------------:| -----:|-----:|-----:|
 | Bitcoin      | :heavy_check_mark: | &cross; | &cross; | &cross; |
 | Litecoin     | :heavy_check_mark:      |   &cross; | &cross; | &cross; |
-| Ethereum | &cross;      |    &cross; | &cross; | &cross; |
+| Ethereum (Goerli) | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; |
 | Bitcoin Cash | &cross;      |    &cross; | &cross; | &cross; |
 | Cosmos | &cross;      |    &cross; | &cross; | &cross; |
 | Binance Smart Chain | &cross;      |    &cross; | &cross; | &cross; |

@@ -2,7 +2,7 @@ require("dotenv").config();
 var { ethers, JsonRpcProvider } = require('ethers')
 var HDNodeWallet = require('ethers/wallet')
 
-var url = "https://mainnet.infura.io/v3/fa926a9d3c2a4067af17c4df5b3d6079"
+var url = "https://goerli.infura.io/v3/fa926a9d3c2a4067af17c4df5b3d6079"
 var sourceAddress = "0x17997E53C1a5066C463e5F0530414cB859dA0695"
 var destinationAddress = "0x0Af52045f63B109934db4b3a4020eF5CDc046BE6"
 var value = "0.01"
