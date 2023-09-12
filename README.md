@@ -22,14 +22,14 @@ Feature Readiness
 
 | Blockchain        | Gen key + address           | Single sig signing  | Combine multisig  | Multi sig signing  |
 | ------------- |:-------------:| -----:|-----:|-----:|
-| Bitcoin      | [x] | [ ] | [ ] | [ ] |
-| Litecoin     | [x]      |   [ ] | [ ] | [ ] |
-| Ethereum | [x]      |    [x] | [ ] | [ ] |
+| Bitcoin      | :heavy_check_mark: | [ ] | [ ] | [ ] |
+| Litecoin     | :heavy_check_mark:      |   [ ] | [ ] | [ ] |
+| Ethereum | :heavy_check_mark:      |    :heavy_check_mark: | [ ] | [ ] |
 | Bitcoin Cash | [ ]      |    [ ] | [ ] | [ ] |
 | Cosmos | [ ]      |    [ ] | [ ] | [ ] |
 | Binance Smart Chain | [ ]      |    [ ] | [ ] | [ ] |
-| Dogecoin | [x]      |    [ ] | [ ] | [ ] |
-| Dash | [x]      |    [ ] | [ ] | [ ] |
+| Dogecoin | :heavy_check_mark:      |    [ ] | [ ] | [ ] |
+| Dash | :heavy_check_mark:      |    [ ] | [ ] | [ ] |
 | Tron | [ ]      |    [ ] | [ ] | [ ] |
 | Polygon | [ ]      |    [ ] | [ ] | [ ] |
 
@@ -37,8 +37,8 @@ Feature Readiness
 
 | Blockchain        | Gen key + address           | Single sig signing  | Combine multisig  | Multi sig signing  |
 | ------------- |:-------------:| -----:|-----:|-----:|
-| Bitcoin      | [x] | [ ] | [ ] | [ ] |
-| Litecoin     | [x]      |   [ ] | [ ] | [ ] |
+| Bitcoin      | :heavy_check_mark: | [ ] | [ ] | [ ] |
+| Litecoin     | :heavy_check_mark:      |   [ ] | [ ] | [ ] |
 | Ethereum | [ ]      |    [ ] | [ ] | [ ] |
 | Bitcoin Cash | [ ]      |    [ ] | [ ] | [ ] |
 | Cosmos | [ ]      |    [ ] | [ ] | [ ] |
