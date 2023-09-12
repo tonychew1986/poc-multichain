@@ -25,7 +25,7 @@ Feature Readiness
 | Bitcoin      | :heavy_check_mark: | &cross; | &cross; | &cross; |
 | Litecoin     | :heavy_check_mark:      |   &cross; | &cross; | &cross; |
 | Ethereum | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; |
-| Bitcoin Cash | &cross;      |    &cross; | &cross; | &cross; |
+| Bitcoin Cash | :heavy_check_mark:      |    &cross; | &cross; | &cross; |
 | Cosmos | &cross;      |    &cross; | &cross; | &cross; |
 | Binance Smart Chain | &cross;      |    &cross; | &cross; | &cross; |
 | Dogecoin | :construction:      |    &cross; | &cross; | &cross; |

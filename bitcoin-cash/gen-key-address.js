@@ -2,6 +2,7 @@ var bip39 = require('bip39')
 var crypto = require('crypto')
 var bitcoin = require('bitcoinjs-lib')
 var b58 = require('bs58check')
+var bchaddr = require('bchaddrjs');
 
 const ecc = require('tiny-secp256k1')
 const { BIP32Factory } = require('bip32')
@@ -32,17 +33,17 @@ console.log("root ", root);
 
 var acct = root.derivePath("m/44'/145'/0'");
 console.log("acct ", acct);
-const LITECOIN = {
-    messagePrefix: '\x19Litecoin Signed Message:\n',
-    bech32: 'ltc',
-    bip32: {
-        public: 0x0488b21e,
-        private: 0x0488ade4,
-    },
-    pubKeyHash: 0x30,
-    scriptHash: 0x32,
-    wif: 0x80,
-};
+// const BITCOINCASH = {
+//     messagePrefix: '\x19Bitcoin Signed Message:\n',
+//     bech32: 'ltc',
+//     bip32: {
+//         public: 0x0488b21e,
+//         private: 0x0488ade4,
+//     },
+//     pubKeyHash: 0x30,
+//     scriptHash: 0x32,
+//     wif: 0x80,
+// };
 
 
 // private: 0x80,
@@ -81,10 +82,33 @@ console.log("xpub ", xpub);
 // let zpub = b58.encode(data);
 // console.log("zpub ", zpub);
 
-const child1Address = bitcoin.payments.p2pkh({ pubkey: child1.publicKey, network: LITECOIN }).address
-const child2Address = bitcoin.payments.p2pkh({ pubkey: child2.publicKey, network: LITECOIN }).address
-const child3Address = bitcoin.payments.p2pkh({ pubkey: child3.publicKey, network: LITECOIN }).address
+var toLegacyAddress = bchaddr.toLegacyAddress;
+var toBitpayAddress = bchaddr.toBitpayAddress;
+var toCashAddress = bchaddr.toCashAddress;
+
+
+
+const child1Address = bitcoin.payments.p2pkh({ pubkey: child1.publicKey }).address
+const child2Address = bitcoin.payments.p2pkh({ pubkey: child2.publicKey }).address
+const child3Address = bitcoin.payments.p2pkh({ pubkey: child3.publicKey }).address
 
 console.log("child1Address ", child1Address);
 console.log("child2Address ", child2Address);
 console.log("child3Address ", child3Address);
+
+console.log("Legacy");
+console.log("child1Address ", toLegacyAddress(child1Address))
+console.log("child2Address ", toLegacyAddress(child2Address))
+console.log("child3Address ", toLegacyAddress(child3Address))
+
+
+console.log("BitPay");
+console.log("child1Address ", toBitpayAddress(child1Address))
+console.log("child2Address ", toBitpayAddress(child2Address))
+console.log("child3Address ", toBitpayAddress(child3Address))
+
+
+console.log("Cash Address");
+console.log("child1Address ", toCashAddress(child1Address))
+console.log("child2Address ", toCashAddress(child2Address))
+console.log("child3Address ", toCashAddress(child3Address))
