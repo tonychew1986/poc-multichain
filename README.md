@@ -26,12 +26,12 @@ Feature Readiness
 | Litecoin     | :heavy_check_mark:      |   &cross; | &cross; | &cross; |
 | Ethereum | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; |
 | Bitcoin Cash | :heavy_check_mark:      |    &cross; | &cross; | &cross; |
-| Cosmos | &cross;      |    &cross; | &cross; | &cross; |
+| Cosmos | :construction:      |    &cross; | &cross; | &cross; |
 | Binance Smart Chain | &cross;      |    &cross; | &cross; | &cross; |
 | Dogecoin | :construction:      |    &cross; | &cross; | &cross; |
 | Dash | :heavy_check_mark:      |    &cross; | &cross; | &cross; |
 | Tron | &cross;      |    &cross; | &cross; | &cross; |
-| Polygon | &cross;      |    &cross; | &cross; | &cross; |
+| Polygon | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; |
 
 ## Testnet
 
@@ -46,7 +46,7 @@ Feature Readiness
 | Dogecoin | :heavy_check_mark:      |    &cross; | &cross; | &cross; |
 | Dash | :heavy_check_mark:      |    &cross; | &cross; | &cross; |
 | Tron | &cross;      |    &cross; | &cross; | &cross; |
-| Polygon | &cross;      |    &cross; | &cross; | &cross; |
+| Polygon (Mumbai) | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; |
 
 
 ----------------
