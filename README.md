@@ -22,8 +22,8 @@ Feature Readiness
 
 | Blockchain        | Gen key + address           | Single sig signing  | Combine multisig  | Multi sig signing  |
 | ------------- |:-------------:| -----:|-----:|-----:|
-| Bitcoin      | :heavy_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Litecoin     | :heavy_check_mark:      |   :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Bitcoin      | :heavy_check_mark: | &cross; | &cross; | &cross; |
+| Litecoin     | :heavy_check_mark:      |   &cross; | &cross; | &cross; |
 | Ethereum | :heavy_check_mark:      |    :heavy_check_mark: | [ ] | [ ] |
 | Bitcoin Cash | [ ]      |    [ ] | [ ] | [ ] |
 | Cosmos | [ ]      |    [ ] | [ ] | [ ] |
