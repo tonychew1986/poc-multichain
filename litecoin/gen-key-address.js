@@ -40,7 +40,7 @@ const LITECOIN = {
         private: 0x019d9cfe,
     },
     pubKeyHash: 0x30,
-    scriptHash: 0x32,
+    scriptHash: 0x05,
     wif: 0xb0,
 };
 

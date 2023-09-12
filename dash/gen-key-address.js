@@ -30,24 +30,23 @@ console.log("seed ", seed);
 const root = bip32.fromSeed(seed)
 console.log("root ", root);
 
-var acct = root.derivePath("m/44'/145'/0'");
+var acct = root.derivePath("m/44'/5'/0'");
 console.log("acct ", acct);
-const LITECOIN = {
-    messagePrefix: '\x19Litecoin Signed Message:\n',
-    bech32: 'ltc',
+const DASH = {
+    messagePrefix: '\x19Dash Signed Message:\n',
     bip32: {
         public: 0x0488b21e,
         private: 0x0488ade4,
     },
-    pubKeyHash: 0x30,
-    scriptHash: 0x32,
-    wif: 0x80,
+    pubKeyHash: 0x4c,
+    scriptHash: 0x10,
+    wif: 0xcc,
 };
 
 
-// private: 0x80,
-// public: 0x00,
-// scripthash: 0x05
+// private: 0xcc,
+// public: 0x4c,
+// scripthash: 0x10
 
 //testnet
 // versions: {
@@ -57,13 +56,13 @@ const LITECOIN = {
 //     },
 //     bip44: 1,
 //     private: 0xef,
-//     public: 0x6f,
-//     scripthash: 0xc4
+//     public: 0x8c,
+//     scripthash: 0x13
 //   }
 
-const child1 = root.derivePath("m/44'/145'/0'/0/0")
-const child2 = root.derivePath("m/44'/145'/0'/0/1")
-const child3 = root.derivePath("m/44'/145'/0'/0/2")
+const child1 = root.derivePath("m/44'/5'/0'/0/0")
+const child2 = root.derivePath("m/44'/5'/0'/0/1")
+const child3 = root.derivePath("m/44'/5'/0'/0/2")
 
 console.log("child1 ", child1);
 console.log("child2 ", child2);
@@ -81,9 +80,9 @@ console.log("xpub ", xpub);
 // let zpub = b58.encode(data);
 // console.log("zpub ", zpub);
 
-const child1Address = bitcoin.payments.p2pkh({ pubkey: child1.publicKey, network: LITECOIN }).address
-const child2Address = bitcoin.payments.p2pkh({ pubkey: child2.publicKey, network: LITECOIN }).address
-const child3Address = bitcoin.payments.p2pkh({ pubkey: child3.publicKey, network: LITECOIN }).address
+const child1Address = bitcoin.payments.p2pkh({ pubkey: child1.publicKey, network: DASH }).address
+const child2Address = bitcoin.payments.p2pkh({ pubkey: child2.publicKey, network: DASH }).address
+const child3Address = bitcoin.payments.p2pkh({ pubkey: child3.publicKey, network: DASH }).address
 
 console.log("child1Address ", child1Address);
 console.log("child2Address ", child2Address);

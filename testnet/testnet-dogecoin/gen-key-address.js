@@ -30,40 +30,34 @@ console.log("seed ", seed);
 const root = bip32.fromSeed(seed)
 console.log("root ", root);
 
-var acct = root.derivePath("m/44'/145'/0'");
+var acct = root.derivePath("m/44'/1'/0'");
 console.log("acct ", acct);
-const LITECOIN = {
-    messagePrefix: '\x19Litecoin Signed Message:\n',
-    bech32: 'ltc',
+// const DOGECOIN = {
+//     messagePrefix: '\x19Dogecoin Signed Message:\n',
+//     bech32: 'doge',
+//     bip32: {
+//         public: 0x02FACAFD,
+//         private: 0x02FAC398,
+//     },
+//     pubKeyHash: 0x1E,
+//     scriptHash: 0x16,
+//     wif: 0x9E,
+// };
+
+const DOGECOIN_TEST = {
+    messagePrefix: '\x19Dogecoin Signed Message:\n',
     bip32: {
-        public: 0x0488b21e,
-        private: 0x0488ade4,
+        public: 0x043587cf,
+        private: 0x04358394,
     },
-    pubKeyHash: 0x30,
-    scriptHash: 0x32,
-    wif: 0x80,
+    pubKeyHash: 0x71,
+    scriptHash: 0xC4,
+    wif: 0xF1,
 };
 
-
-// private: 0x80,
-// public: 0x00,
-// scripthash: 0x05
-
-//testnet
-// versions: {
-//     bip32: {
-//       private: 0x04358394,
-//       public: 0x043587cf
-//     },
-//     bip44: 1,
-//     private: 0xef,
-//     public: 0x6f,
-//     scripthash: 0xc4
-//   }
-
-const child1 = root.derivePath("m/44'/145'/0'/0/0")
-const child2 = root.derivePath("m/44'/145'/0'/0/1")
-const child3 = root.derivePath("m/44'/145'/0'/0/2")
+const child1 = root.derivePath("m/44'/1'/0'/0/0")
+const child2 = root.derivePath("m/44'/1'/0'/0/1")
+const child3 = root.derivePath("m/44'/1'/0'/0/2")
 
 console.log("child1 ", child1);
 console.log("child2 ", child2);
@@ -75,15 +69,15 @@ console.log("xpub ", xpub);
 //const xpriv = acct.toBase58();
 //console.log("xpriv ", xpriv);
 
-// let data = b58.decode(xpub)
-// data = data.slice(4);
-// data = Buffer.concat([Buffer.from('04b24746','hex'), data]); // see https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014907.html for tenative (non-BIP-official) version bytes
-// let zpub = b58.encode(data);
-// console.log("zpub ", zpub);
+let data = b58.decode(xpub)
+data = data.slice(4);
+data = Buffer.concat([Buffer.from('043587cf','hex'), data]); // see https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014907.html for tenative (non-BIP-official) version bytes
+let tpub = b58.encode(data);
+console.log("tpub ", tpub);
 
-const child1Address = bitcoin.payments.p2pkh({ pubkey: child1.publicKey, network: LITECOIN }).address
-const child2Address = bitcoin.payments.p2pkh({ pubkey: child2.publicKey, network: LITECOIN }).address
-const child3Address = bitcoin.payments.p2pkh({ pubkey: child3.publicKey, network: LITECOIN }).address
+const child1Address = bitcoin.payments.p2pkh({ pubkey: child1.publicKey, network: DOGECOIN_TEST }).address
+const child2Address = bitcoin.payments.p2pkh({ pubkey: child2.publicKey, network: DOGECOIN_TEST }).address
+const child3Address = bitcoin.payments.p2pkh({ pubkey: child3.publicKey, network: DOGECOIN_TEST }).address
 
 console.log("child1Address ", child1Address);
 console.log("child2Address ", child2Address);
