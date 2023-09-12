@@ -43,6 +43,10 @@ Feature Readiness
 | TonCoin | &cross;      |    &cross; | &cross; | &cross; |
 | Optimism | &cross;      |    &cross; | &cross; | &cross; |
 | Sui | &cross;      |    &cross; | &cross; | &cross; |
+| Stellar | &cross;      |    &cross; | &cross; | &cross; |
+| Ripple | &cross;      |    &cross; | &cross; | &cross; |
+| Decred | &cross;      |    &cross; | &cross; | &cross; |
+| Nano | &cross;      |    &cross; | &cross; | &cross; |
 
 ## Testnet
 
@@ -69,6 +73,10 @@ Feature Readiness
 | TonCoin | &cross;      |    &cross; | &cross; | &cross; |
 | Optimism | &cross;      |    &cross; | &cross; | &cross; |
 | Sui | &cross;      |    &cross; | &cross; | &cross; |
+| Stellar | &cross;      |    &cross; | &cross; | &cross; |
+| Ripple | &cross;      |    &cross; | &cross; | &cross; |
+| Decred | &cross;      |    &cross; | &cross; | &cross; |
+| Nano | &cross;      |    &cross; | &cross; | &cross; |
 
 
 ----------------
