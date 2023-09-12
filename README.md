@@ -34,7 +34,7 @@ Feature Readiness
 | Polygon | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; | &cross; |
 | Solana | &cross;      |    &cross; | &cross; | &cross; | &cross; |
 | Avalanche | &cross;      |    &cross; | &cross; | &cross; | &cross; |
-| Ethereum Classic | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Ethereum Classic | :heavy_check_mark:      |    &cross; | &cross; | &cross; | &cross; |
 | Algorand | :construction:      |    &cross; | &cross; | &cross; | &cross; |
 | Hedera | &cross;      |    &cross; | &cross; | &cross; | &cross; |
 | Filecoin | &cross;      |    &cross; | &cross; | &cross; | &cross; |
@@ -64,7 +64,7 @@ Feature Readiness
 | Polygon (Mumbai) | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; | &cross; |
 | Solana | &cross;      |    &cross; | &cross; | &cross; | &cross; |
 | Avalanche | &cross;      |    &cross; | &cross; | &cross; | &cross; |
-| Ethereum Classic | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Ethereum Classic | :heavy_check_mark:      |    &cross; | &cross; | &cross; | &cross; |
 | Algorand | &cross;      |    &cross; | &cross; | &cross; | &cross; |
 | Hedera | &cross;      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: |
 | Filecoin | &cross;      |    &cross; | &cross; | &cross; | &cross; |
