@@ -52,7 +52,7 @@ Feature Readiness
 
 | Blockchain        | Gen key + address           | Single sig sign | Token Tx | Gen multisig  | Multi sig sign  |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|
-| Bitcoin      | :heavy_check_mark: | &cross; | :no_entry_sign: | &cross; | &cross; |
+| Bitcoin      | :heavy_check_mark: | &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; |
 | Litecoin     | :heavy_check_mark:      |   &cross; | :no_entry_sign: | &cross; | &cross; |
 | Ethereum (Goerli) | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | &cross; | &cross; |
 | Bitcoin Cash | :construction:      |    &cross; | :no_entry_sign: | &cross; | &cross; |
