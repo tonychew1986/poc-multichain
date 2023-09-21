@@ -15,6 +15,12 @@ Implementation reference
 Refer to https://iancoleman.io/bip39/
 
 
+Considerations
+----------------
+
+1. Implementation is intentionally separated into MainNet & TestNet to reduce application & business logic. This also helps make independent testing and feature verification easier
+
+
 Caveats
 ----------------
 
