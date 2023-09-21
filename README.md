@@ -15,6 +15,12 @@ Implementation reference
 Refer to https://iancoleman.io/bip39/
 
 
+Caveats
+----------------
+
+1. Signing feature only consist of co-signing and may not consist of additional implementation to handle UTXO, Combine PSBT or handle different address format
+
+
 Feature Readiness
 ----------------
 
@@ -52,7 +58,7 @@ Feature Readiness
 
 | Blockchain        | Gen key + address           | Single sig sign | Token Tx | Gen multisig  | Multi sig sign  |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|
-| Bitcoin      | :heavy_check_mark: | &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; |
+| Bitcoin      | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: | :heavy_check_mark: | :heavy_check_mark: |
 | Litecoin     | :heavy_check_mark:      |   &cross; | :no_entry_sign: | &cross; | &cross; |
 | Ethereum (Goerli) | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | &cross; | &cross; |
 | Bitcoin Cash | :construction:      |    &cross; | :no_entry_sign: | &cross; | &cross; |
