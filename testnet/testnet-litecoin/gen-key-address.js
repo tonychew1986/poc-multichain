@@ -34,7 +34,7 @@ var acct = root.derivePath("m/44'/1'/0'");
 console.log("acct ", acct);
 const LITECOIN = {
     messagePrefix: '\x19Litecoin Signed Message:\n',
-    bech32: 'ltc',
+    bech32: 'tltc',
     bip32: {
         public: 0x019da462,
         private: 0x019d9cfe,
