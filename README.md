@@ -66,7 +66,7 @@ Feature Readiness
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|
 | Bitcoin      | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: | :heavy_check_mark: | :heavy_check_mark: |
 | Litecoin     | :heavy_check_mark:      |   &cross; | :no_entry_sign: | &cross; | &cross; |
-| Ethereum (Goerli) | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | &cross; | &cross; |
+| Ethereum (Goerli) | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | Bitcoin Cash | :construction:      |    &cross; | :no_entry_sign: | &cross; | &cross; |
 | Cosmos | &cross;      |    &cross; | &cross; | &cross; | &cross; |
 | Binance Smart Chain | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; | &cross; |
