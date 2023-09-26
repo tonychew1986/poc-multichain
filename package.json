@@ -21,7 +21,12 @@
     "dotenv": "^16.3.1",
     "ecpair": "^2.1.0",
     "ethereumjs-tx": "^2.1.2",
-    "ethers": "^6.7.1",
+    "ethers": "^5.7.2",
     "tiny-secp256k1": "^2.2.3"
+  },
+  "devDependencies": {
+    "@safe-global/api-kit": "^1.0.1",
+    "@safe-global/protocol-kit": "^0.1.1",
+    "@safe-global/safe-core-sdk-types": "^1.10.1"
   }
 }

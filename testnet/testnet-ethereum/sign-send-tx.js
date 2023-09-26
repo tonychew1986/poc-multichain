@@ -9,6 +9,7 @@ var value = "0.01"
 let chainId = 5 // goerli
 
 const provider = new JsonRpcProvider(url);
+console.log("provider ", provider);
 
 const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
 console.log('signer ', signer)
