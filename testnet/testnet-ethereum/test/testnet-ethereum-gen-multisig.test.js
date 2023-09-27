@@ -43,6 +43,6 @@ it('should generate the expected private key based on derivation path & mnemonic
     let privateKey3 = genMulti.genDerivationPrivateKey(mnemonic3, rootPath, "0/0")
 
     expect(privateKey1).toBe(expected_privatekey1);
-    expect(privateKey1).toBe(expected_privatekey2);
-    expect(privateKey1).toBe(expected_privatekey3);
+    expect(privateKey2).toBe(expected_privatekey2);
+    expect(privateKey3).toBe(expected_privatekey3);
 });
