@@ -25,9 +25,6 @@ const { BIP32Factory } = require('bip32')
 // You must wrap a tiny-secp256k1 compatible implementation
 const bip32 = BIP32Factory(ecc)
 
-// what you describe as 'seed'
-var  randomBytes = crypto.randomBytes(16) // 128 bits is enough
-
 // your 12 word phrase
 var mnemonic1 = "cabin version vessel crash eye hero left pool frown stable uphold prevent rude couch primary drum student heavy sail airport lens ball swap first"
 // xpub6CDvE462ejZE83scWLuQES8j8StrnEnkEUfDA7drpULxKKvke96aUThrbYHJvaBpJXLtJTdNgqvv4PBAYhfZMECB4ugQETqyCQTb267pGi9
@@ -35,207 +32,124 @@ var mnemonic2 = "outer unusual this swamp endorse wrong sauce dash camp argue me
 // xpub6D3THqQruQ5dpLN814C4Datb8NLahcTDhRzypSmzQRgtsiNJx3Armk1iLmmvHjFhiAfHaa9QG1irnCVqt8r7m6Vm27qHuak1qcuQGYUpVzc
 var mnemonic3 = "daughter slam polar summer boost end can mansion armor rotate bamboo scan skin offer earn sleep control maze message void fit artist speak swarm"
 // xpub6Bz9nsQMhj1n8U7GWTHPSFtqCJ8yT65yVyCb7s4692C3McRr9iGq8xZ6Xsa8FzJR2CvnwafioRJwbaaBTJs1FwaJHimgziHrcd7WrEXJkaW
+const rootPath = "m/44'/60'/0'";
 
-async function main() {
-  const rootPath = "m/44'/60'/0'";
-  const subPath = "0/0";
-  const fullPath = rootPath + subPath;
+let xpub1 = genXpub(mnemonic1, rootPath)
+let xpub2 = genXpub(mnemonic2, rootPath)
+let xpub3 = genXpub(mnemonic3, rootPath)
+console.log("xpub1 ", xpub1);
+console.log("xpub2 ", xpub2);
+console.log("xpub3 ", xpub3);
 
-  const hdNode1 = ethers.utils.HDNode.fromMnemonic(mnemonic1);
-  const hdNode2 = ethers.utils.HDNode.fromMnemonic(mnemonic2);
-  const hdNode3 = ethers.utils.HDNode.fromMnemonic(mnemonic3);
-  console.log("hdNode1 ", hdNode1);
-  console.log("hdNode2 ", hdNode2);
-  console.log("hdNode3 ", hdNode3);
+let address1 = genDerivationAddress(xpub1, rootPath, "0/0")
+let address2 = genDerivationAddress(xpub2, rootPath, "0/0")
+let address3 = genDerivationAddress(xpub3, rootPath, "0/0")
 
-  const mnemonicWallet1 = hdNode1.derivePath(`m/44'/60'/0'/0/0`);
-  const mnemonicWallet2 = hdNode2.derivePath(`m/44'/60'/0'/0/0`);
-  const mnemonicWallet3 = hdNode3.derivePath(`m/44'/60'/0'/0/0`);
-  console.log("mnemonicWallet1 ", mnemonicWallet1);
-  console.log("mnemonicWallet2 ", mnemonicWallet2);
-  console.log("mnemonicWallet3 ", mnemonicWallet3);
+let privateKey1 = genDerivationPrivateKey(mnemonic1, rootPath, "0/0")
+let privateKey2 = genDerivationPrivateKey(mnemonic2, rootPath, "0/0")
+let privateKey3 = genDerivationPrivateKey(mnemonic3, rootPath, "0/0")
 
-  const privateKey1 = mnemonicWallet1.privateKey;
-  const privateKey2 = mnemonicWallet2.privateKey;
-  const privateKey3 = mnemonicWallet3.privateKey;
-  console.log("privateKey1 ", privateKey1);
-  console.log("privateKey2 ", privateKey2);
-  console.log("privateKey3 ", privateKey3);
+let contract = genContractAddress(
+  [address1, address2, address3], 
+  [privateKey1, "", ""],
+  2
+)
 
-  var seed1 = bip39.mnemonicToSeedSync(mnemonic1) 
-  var seed2 = bip39.mnemonicToSeedSync(mnemonic2) 
-  var seed3 = bip39.mnemonicToSeedSync(mnemonic3) 
+function genXpub(mnemonic, rootPath) {
+    var seed = bip39.mnemonicToSeedSync(mnemonic)
+    console.log("seed ", seed);
+    
+    const root = bip32.fromSeed(seed)
+    console.log("root ", root);
+    
+    var acct = root.derivePath(rootPath);
+    
+    const xpub = acct.neutered().toBase58();
+    console.log("xpub ", xpub);
 
-  // console.log("mnemonic1 ", mnemonic1);
-  console.log("seed1 ", seed1);
-  console.log("seed2 ", seed2);
-  console.log("seed3 ", seed3);
+    return xpub
+}
 
-  const root1 = bip32.fromSeed(seed1)
-  const root2 = bip32.fromSeed(seed2)
-  const root3 = bip32.fromSeed(seed3)
-  console.log("root1 ", root1);
-  console.log("root2 ", root2);
-  console.log("root3 ", root3);
+function genDerivationAddress(xpub, rootPath, subPath) {
+    let HDNode = ethers.utils.HDNode.fromExtendedKey(xpub);
+    console.log("HDNode ", HDNode);
+    
+    const address = HDNode.derivePath(subPath);
+    console.log("address ", address.address)
 
-  var acct1 = root1.derivePath("m/44'/60'/0'");
-  var acct2 = root2.derivePath("m/44'/60'/0'");
-  var acct3 = root3.derivePath("m/44'/60'/0'");
-  // check if 60 is testnet. there should be a testnet path differentiation
-
-  const xpub1 = acct1.neutered().toBase58();
-  const xpub2 = acct2.neutered().toBase58();
-  const xpub3 = acct3.neutered().toBase58();
-
-  console.log("xpub1 ", xpub1);
-  console.log("xpub2 ", xpub2);
-  console.log("xpub3 ", xpub3);
-
-  const HDNode1 = ethers.utils.HDNode.fromExtendedKey(xpub1);
-  const HDNode2 = ethers.utils.HDNode.fromExtendedKey(xpub2);
-  const HDNode3 = ethers.utils.HDNode.fromExtendedKey(xpub3);
-  console.log("HDNode1 ", HDNode1);
-  console.log("HDNode2 ", HDNode2);
-  console.log("HDNode3 ", HDNode3);
+    return address.address
+}
 
 
-  const address1_0 = HDNode1.derivePath("0/0");
-  const address1_1 = HDNode1.derivePath("0/1");
-  const address1_2 = HDNode1.derivePath("0/2");
-  const address1_3 = HDNode1.derivePath("0/3");
-  const address1_4 = HDNode1.derivePath("0/4");
-  const address1_5 = HDNode1.derivePath("0/5");
+function genDerivationPrivateKey(mnemonic, rootPath, subPath) {
+  let fullPath = rootPath + "/" + subPath;
+  let hdNode = ethers.utils.HDNode.fromMnemonic(mnemonic);
+  console.log("hdNode ", hdNode);
 
-  console.log("address1_0 ", address1_0)
-  console.log("address1_1 ", address1_1)
-  console.log("address1_2 ", address1_2)
-  console.log("address1_3 ", address1_3)
-  console.log("address1_4 ", address1_4)
-  console.log("address1_5 ", address1_5)
+  let mnemonicWallet = hdNode.derivePath(fullPath);
+  console.log("mnemonicWallet ", mnemonicWallet);
 
-  const address2_0 = HDNode2.derivePath("0/0");
-  const address2_1 = HDNode2.derivePath("0/1");
-  const address2_2 = HDNode2.derivePath("0/2");
-  const address2_3 = HDNode2.derivePath("0/3");
-  const address2_4 = HDNode2.derivePath("0/4");
-  const address2_5 = HDNode2.derivePath("0/5");
+  let privateKey = mnemonicWallet.privateKey;
+  console.log("privateKey ", privateKey);
 
-  console.log("address2_0 ", address2_0)
-  console.log("address2_1 ", address2_1)
-  console.log("address2_2 ", address2_2)
-  console.log("address2_3 ", address2_3)
-  console.log("address2_4 ", address2_4)
-  console.log("address2_5 ", address2_5)
+  return privateKey
+}
 
-  const address3_0 = HDNode3.derivePath("0/0");
-  const address3_1 = HDNode3.derivePath("0/1");
-  const address3_2 = HDNode3.derivePath("0/2");
-  const address3_3 = HDNode3.derivePath("0/3");
-  const address3_4 = HDNode3.derivePath("0/4");
-  const address3_5 = HDNode3.derivePath("0/5");
+async function genContractAddress(addressArray, keyArray, threshold) {
+  let quorum = addressArray.length;
 
-  console.log("address3_0 ", address3_0)
-  console.log("address3_1 ", address3_1)
-  console.log("address3_2 ", address3_2)
-  console.log("address3_3 ", address3_3)
-  console.log("address3_4 ", address3_4)
-  console.log("address3_5 ", address3_5)
+  let ethAdapterOwnerArray = [];
+  for (var i=0; i<quorum; i++) {
+    if (keyArray[i] !== "") {
+      let ownerSigner = new ethers.Wallet(keyArray[i], provider)
+      console.log("ownerSigner ", ownerSigner)
+  
+      // only need 1 signer, the rest can be provider
+      let ethAdapterOwner = new EthersAdapter({
+        ethers,
+        signerOrProvider: ownerSigner
+      })
+      console.log("ethAdapterOwner ", ethAdapterOwner)
+  
+      ethAdapterOwnerArray.push(ethAdapterOwner)
+    }
+  }
+  console.log("ethAdapterOwnerArray ", ethAdapterOwnerArray) 
 
-  const owner1Signer = new ethers.Wallet(privateKey1, provider)
-  const owner2Signer = new ethers.Wallet(privateKey2, provider)
-  const owner3Signer = new ethers.Wallet(privateKey3, provider)
-  console.log("owner1Signer ", owner1Signer)
-  console.log("owner2Signer ", owner2Signer)
-  console.log("owner3Signer ", owner3Signer)
-
-  const ethAdapterOwner1 = new EthersAdapter({
-    ethers,
-    signerOrProvider: owner1Signer
-  })
-  const ethAdapterOwner2 = new EthersAdapter({
-    ethers,
-    signerOrProvider: owner2Signer
-  })
-  const ethAdapterOwner3 = new EthersAdapter({
-    ethers,
-    signerOrProvider: owner3Signer
-  })
-  console.log("ethAdapterOwner1 ", ethAdapterOwner1)
-  console.log("ethAdapterOwner2 ", ethAdapterOwner2)
-  console.log("ethAdapterOwner3 ", ethAdapterOwner3)
-
-  console.log("xxx ")
-  const { chainId } = await provider.getNetwork()
-  console.log(chainId) // 42
-  // var chainId = await ethAdapterOwner1.getChainId()
-  // // console.log("xxx ")
-  // console.log("chainId ", chainId)
-
-  // const txServiceUrl = 'https://safe-transaction-goerli.safe.global'
-  // const safeService = new SafeApiKit({ txServiceUrl, ethAdapter: ethAdapterOwner1 })
-  const Safe = SafeProtocol.default
-  console.log("Safe ", Safe)
-  // const safeSdk = await Safe.create({ ethAdapter: ethAdapterOwner1})
-  const safeSdk = await Safe.create({
-    ethAdapter: ethAdapterOwner1,
-  });
-
-  // isL1SafeMasterCopy: true,
-  // safeAddress: GNOSIS_SAFE_ADDR,
-  console.log("safeSdk ", safeSdk)
+  let { chainId } = await provider.getNetwork()
+  console.log(chainId) 
+  
+  // const Safe = SafeProtocol.default
+  // console.log("Safe ", Safe)
+  
+  // const safeSdk = await Safe.create({
+  //   ethAdapter: ethAdapterOwner,
+  // });
+  // console.log("safeSdk ", safeSdk)
   
   const safeAccountConfig = {
-    owners: [
-      await owner1Signer.getAddress(),
-      await owner2Signer.getAddress(),
-      await owner3Signer.getAddress()
-    ],
-    threshold: 2,
+    owners: addressArray,
+    threshold: threshold,
     // ... (Optional params)
   }
 
-  // const predictedSafe = {
-  //   safeAccountConfig,
-  //   safeDeploymentConfig
-  // }
-
-  const safeFactory = await SafeFactory.create({ ethAdapter: ethAdapterOwner1 })
-  // const safeSdk = await Safe.create({ ethAdapter:ethAdapterOwner1, predictedSafe });
-
+  let safeFactory = await SafeFactory.create({ ethAdapter: ethAdapterOwnerArray[0] })
   console.log("safeFactory ", safeFactory)
-  // const safeFactory = await SafeFactory.create({ ethAdapter: ethAdapterOwner1 })
-  // console.log("xxx ")
   
   /* This Safe is tied to owner 1 because the factory was initialized with
   an adapter that had owner 1 as the signer. */
-  const safeSdkOwner1 = await safeFactory.deploySafe({ safeAccountConfig })
+  let safeSdkOwner1 = await safeFactory.deploySafe({ safeAccountConfig })
   
-  const safeAddress = await safeSdkOwner1.getAddress()
+  let safeAddress = await safeSdkOwner1.getAddress()
   
   console.log('Your Safe has been deployed:')
   console.log(`https://goerli.etherscan.io/address/${safeAddress}`)
   console.log(`https://app.safe.global/gor:${safeAddress}`)
-  
-  // const safeAmount = ethers.utils.parseUnits('0.01', 'ether').toHexString()
-  
-  // const transactionParameters = {
-  //   to: safeAddress,
-  //   value: safeAmount
-  // }
-  
-  // const tx = await owner1Signer.sendTransaction(transactionParameters)
-  
-  // console.log('Fundraising.')
-  // console.log(`Deposit Transaction: https://goerli.etherscan.io/tx/${tx.hash}`)
-  
-  
-  
-  // create gnosis safe smart contract
-  // set m of n
-  // add addresses
-  // publish on-chain
-  // wait for confirmation
-  // get smart contract address
+
+  return safeAddress
 }
 
-main()
+exports.genXpub = genXpub;
+exports.genDerivationPrivateKey = genDerivationPrivateKey;
+exports.genDerivationAddress = genDerivationAddress;
+exports.genContractAddress = genContractAddress;
