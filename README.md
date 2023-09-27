@@ -107,3 +107,9 @@ Install NPM modules on fresh deployment:
 ```bash
 $ npm install
 ```
+
+Running test suite:
+
+```bash
+$ npm test
+```

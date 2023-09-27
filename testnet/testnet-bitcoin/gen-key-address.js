@@ -8,54 +8,77 @@ const { BIP32Factory } = require('bip32')
 // You must wrap a tiny-secp256k1 compatible implementation
 const bip32 = BIP32Factory(ecc)
 
-// what you describe as 'seed'
-var  randomBytes = crypto.randomBytes(16) // 128 bits is enough
+const TESTNET = bitcoin.networks.testnet;
 
 // your 12 word phrase
 var mnemonic = "cabin version vessel crash eye hero left pool frown stable uphold prevent rude couch primary drum student heavy sail airport lens ball swap first"
 
-// "when aunt guess group anxiety country rival inspire rug advice emerge party"; //bip39.entropyToMnemonic(randomBytes.toString('hex')) 
+const rootPath = "m/84'/1'/0'";
+// const subPath = "0/0";
+// const fullPath = rootPath + subPath;
 
-// what is accurately described as the wallet seed
-var seed = bip39.mnemonicToSeedSync(mnemonic) // you'll use this in #3 below
+const BTC_TEST = {
+    messagePrefix: '\x18Bitcoin Signed Message:\n',
+    bech32: 'tb',
+    bip32: {
+      public: 0x045f1cf6,
+      private: 0x045f18bc,
+    },
+    pubKeyHash: 0x6f,
+    scriptHash: 0xc4,
+    wif: 0xef,
+}
 
-console.log("mnemonic ", mnemonic);
-console.log("seed ", seed);
-
-//const path = "m/44'/0/0"
-//console.log("path ", path);
-
-// const mnemonic = 'praise you muffin lion enable neck grocery crumble super myself license ghost'
-// const seed = bip39.mnemonicToSeed(mnemonic)
-const root = bip32.fromSeed(seed)
-console.log("root ", root);
-
-var acct = root.derivePath("m/84'/1'/0'");
-
-const child1 = root.derivePath("m/84'/1'/0'/0/0")
-const child2 = root.derivePath("m/84'/1'/0'/0/1")
-const child3 = root.derivePath("m/84'/1'/0'/0/2")
-
-console.log("child1 ", child1);
-console.log("child2 ", child2);
-console.log("child3 ", child3);
-
-const xpub = acct.neutered().toBase58();
-//console.log("xpub ", xpub);
-
-//const xpriv = acct.toBase58();
-//console.log("xpriv ", xpriv);
-
-let data = b58.decode(xpub)
-data = data.slice(4);
-data = Buffer.concat([Buffer.from('045f1cf6','hex'), data]); // see https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014907.html for tenative (non-BIP-official) version bytes
-let vpub = b58.encode(data);
+let {xpub, vpub} = genXpub(mnemonic, rootPath)
+console.log("xpub ", xpub);
 console.log("vpub ", vpub);
 
-const child1Address = bitcoin.payments.p2wpkh({ pubkey: child1.publicKey }).address
-const child2Address = bitcoin.payments.p2wpkh({ pubkey: child2.publicKey }).address
-const child3Address = bitcoin.payments.p2wpkh({ pubkey: child3.publicKey }).address
+let address1 = genDerivationAddress(xpub, rootPath, "0/0")
+let address2 = genDerivationAddress(xpub, rootPath, "0/1")
+let address3 = genDerivationAddress(xpub, rootPath, "0/2")
 
-console.log("child1Address ", child1Address);
-console.log("child2Address ", child2Address);
-console.log("child3Address ", child3Address);
+function genXpub(mnemonic, rootPath) {
+    var seed = bip39.mnemonicToSeedSync(mnemonic)
+    console.log("seed ", seed);
+    
+    const root = bip32.fromSeed(seed)
+    console.log("root ", root);
+    
+    var acct = root.derivePath(rootPath);
+    
+    const xpub = acct.neutered().toBase58();
+    console.log("xpub ", xpub);
+    
+    let data = b58.decode(xpub)
+    data = data.slice(4);
+    data = Buffer.concat([Buffer.from('045f1cf6','hex'), data]); // see https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014907.html for tenative (non-BIP-official) version bytes
+    let vpub = b58.encode(data);
+    console.log("vpub ", vpub);
+
+    return {xpub, vpub}
+}
+
+
+function genDerivationAddress(xpub, rootPath, subPath) {
+    let fullPath = rootPath + '/' + subPath;
+    console.log(xpub, rootPath, subPath);
+    console.log(fullPath);
+
+    let path_index = subPath.split("/");
+    let account_index = parseInt(path_index[0]);
+    let address_index = parseInt(path_index[1]);
+
+    let node = bip32.fromBase58(xpub);
+    console.log("node ", node);
+
+    const { address } = bitcoin.payments.p2wpkh({
+        pubkey: node.derive(account_index).derive(address_index).publicKey,
+        network: bitcoin.networks.testnet
+    });
+    console.log("address ", address);
+
+    return address
+}
+
+exports.genXpub = genXpub;
+exports.genDerivationAddress = genDerivationAddress;
