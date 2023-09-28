@@ -11,7 +11,7 @@ const bip32 = BIP32Factory(ecc)
 // your 12 word phrase
 var mnemonic = "cabin version vessel crash eye hero left pool frown stable uphold prevent rude couch primary drum student heavy sail airport lens ball swap first"
 
-const rootPath = "m/44'/6111111'/0'/0'/0'/0'";
+const rootPath = "m/44'/60'/0'";
 
 let xpub = genXpub(mnemonic, rootPath)
 console.log("xpub ", xpub);
