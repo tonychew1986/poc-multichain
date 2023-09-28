@@ -115,31 +115,6 @@ function convertXpubToVpub(xpub) {
     return Vpub;
 }
 
-// const pubArray = [];
-// pubArray.push(childPubkey1);
-// pubArray.push(childPubkey2);
-// pubArray.push(childPubkey3);
-
-// pubArray.sort();
-
-// const pubkeys = [
-//   pubArray[0],
-//   pubArray[1],
-//   pubArray[2],
-// ].map((hex) => Buffer.from(hex, 'hex'));
-// console.log("pubkeys ",pubkeys);
-
-// const network = bitcoin.networks.testnet;
-
-// const p2ms = bitcoin.payments.p2ms({ m: 2, pubkeys, network })
-// const p2wsh = bitcoin.payments.p2wsh({ redeem: p2ms, network })
-// console.log("p2ms ",p2ms);
-// console.log("p2wsh ",p2wsh);
-// const witnessScript = p2wsh.redeem.output;
-// console.log("witnessScript ", witnessScript.toString('hex'));
-
-// console.log("p2wsh.address ",p2wsh.address);
-
 exports.genXpub = genXpub;
 exports.convertXpubToVpub = convertXpubToVpub;
 exports.genDerivationAddress = genDerivationAddress;
