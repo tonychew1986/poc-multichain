@@ -33,7 +33,7 @@ Feature Readiness
 ## Mainnet
 
 | Blockchain        | Single Gen Address           | Single Coin Transfer | Single Token Transfer | Multi Gen Address           | Multi Coin Transfer | Multi Token Transfer |
-| ------------- |:-------------:| -----:|-----:|-----:|-----:|
+| ------------- |:-------------:| -----:|-----:|-----:|-----:|-----:|
 | Bitcoin      | :heavy_check_mark: | &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; | :no_entry_sign: |
 | Litecoin     | :heavy_check_mark:      |   &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
 | Ethereum | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | &cross; | &cross; | &cross; |
@@ -63,7 +63,7 @@ Feature Readiness
 ## Testnet
 
 | Blockchain        | Single Gen Address           | Single Coin Transfer | Single Token Transfer | Multi Gen Address           | Multi Coin Transfer | Multi Token Transfer |
-| ------------- |:-------------:| -----:|-----:|-----:|-----:|
+| ------------- |:-------------:| -----:|-----:|-----:|-----:|-----:|
 | Bitcoin      | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: |
 | Litecoin     | :heavy_check_mark:      |   &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; | :no_entry_sign: |
 | Ethereum (Goerli) | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | &cross; |
