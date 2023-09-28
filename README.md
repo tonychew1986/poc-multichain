@@ -69,13 +69,13 @@ Feature Readiness
 | Ethereum (Goerli) | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | Bitcoin Cash | :construction:      |    &cross; | :no_entry_sign: | &cross; | &cross; |
 | Cosmos | &cross;      |    &cross; | &cross; | &cross; | &cross; |
-| Binance Smart Chain | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; | &cross; |
+| Binance Smart Chain | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | :heavy_check_mark: | &cross; |
 | Dogecoin | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; |
 | Dash | :heavy_check_mark:      |    &cross; | &cross; | &cross; | &cross; |
 | Tron | &cross;      |    &cross; | &cross; | &cross; | &cross; |
-| Polygon (Mumbai) | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; | &cross; |
+| Polygon (Mumbai) | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | :heavy_check_mark: | &cross; |
 | Solana | &cross;      |    &cross; | &cross; | &cross; | &cross; |
-| Avalanche | &cross;      |    &cross; | &cross; | &cross; | &cross; |
+| Avalanche | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | &cross; |
 | Ethereum Classic | :heavy_check_mark:      |    &cross; | &cross; | &cross; | &cross; |
 | Algorand | &cross;      |    &cross; | &cross; | &cross; | &cross; |
 | Hedera | &cross;      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: |
