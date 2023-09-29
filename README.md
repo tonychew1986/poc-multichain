@@ -32,7 +32,7 @@ Feature Readiness
 
 ## Mainnet
 
-| Blockchain        | Single Gen Address           | Single Coin Transfer | Single Token Transfer | Multi Gen Address           | Multi Coin Transfer | Multi Token Transfer |
+| Blockchain        | [Single] <br/> Gen Address           | [Single] <br/> Coin Transfer | [Single] <br/> Token Transfer | [Multi] <br/> Gen Address           | [Multi] <br/> Coin Transfer | [Multi] <br/> Token Transfer |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|-----:|
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Bitcoin</span>      | :heavy_check_mark: | &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; | :no_entry_sign: |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/2.png" width="14px" /></span> <span>Litecoin</span>     | :heavy_check_mark:      |   &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
