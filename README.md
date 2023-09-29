@@ -69,7 +69,7 @@ Feature Readiness
 
 ## Testnet
 
-| Blockchain        | [Single Sig] <br/> Gen Address           | [Single Sig] <br/> Coin Transfer | [Single Sig] <br/> Token Transfer | [Multi Sig] <br/> Gen Address           | [Multi Sig] <br/> Coin Transfer | [Multi Sig] <br/> Token Transfer |
+| Blockchain        | [Single] <br/> Gen Address           | [Single] <br/> Coin Transfer | [Single] <br/> Token Transfer | [Multi] <br/> Gen Address           | [Multi] <br/> Coin Transfer | [Multi] <br/> Token Transfer |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|-----:|
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Bitcoin</span>      | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/2.png" width="14px" /></span> <span>Litecoin</span>     | :heavy_check_mark:      |   &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; | :no_entry_sign: |
