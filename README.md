@@ -34,7 +34,7 @@ Feature Readiness
 
 | Blockchain        | Single Gen Address           | Single Coin Transfer | Single Token Transfer | Multi Gen Address           | Multi Coin Transfer | Multi Token Transfer |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|-----:|
-| Bitcoin      | :heavy_check_mark: | &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; | :no_entry_sign: |
+| <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" /> Bitcoin      | :heavy_check_mark: | &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; | :no_entry_sign: |
 | Litecoin     | :heavy_check_mark:      |   &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
 | Ethereum | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | &cross; | &cross; | &cross; |
 | Bitcoin Cash | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
@@ -65,12 +65,13 @@ Feature Readiness
 | Fantom | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Near | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Linea | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Gnosis | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 
 ## Testnet
 
 | Blockchain        | Single Gen Address           | Single Coin Transfer | Single Token Transfer | Multi Gen Address           | Multi Coin Transfer | Multi Token Transfer |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|-----:|
-| Bitcoin      | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: |
+| <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" /> Bitcoin      | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: |
 | Litecoin     | :heavy_check_mark:      |   &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; | :no_entry_sign: |
 | Ethereum (Goerli) | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | Bitcoin Cash | :construction:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
@@ -97,10 +98,11 @@ Feature Readiness
 | Nano | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Celo | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Harmony | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Aurora | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Aurora | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
 | Fantom | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
 | Near | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Linea | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Gnosis | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 
 
 ----------------
