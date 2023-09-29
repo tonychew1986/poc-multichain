@@ -59,6 +59,12 @@ Feature Readiness
 | Ripple | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Decred | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Nano | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Celo | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Harmony | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Aurora | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Fantom | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Near | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Linea | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 
 ## Testnet
 
@@ -89,6 +95,12 @@ Feature Readiness
 | Ripple | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Decred | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Nano | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Celo | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Harmony | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Aurora | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Fantom | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Near | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Linea | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 
 
 ----------------
