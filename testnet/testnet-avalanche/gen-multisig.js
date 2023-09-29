@@ -13,7 +13,7 @@ var Safe = require('@safe-global/protocol-kit')
 
 // https://chainlist.org/?search=goerli&testnets=true
 // const RPC_URL='https://eth-goerli.public.blastapi.io'
-var RPC_URL = "https://goerli.infura.io/v3/fa926a9d3c2a4067af17c4df5b3d6079"
+var RPC_URL = "https://api.avax-test.network/ext/bc/C/rpc"
 // const provider = new ethers.providers.JsonRpcProvider(RPC_URL)
 
 // const provider = new JsonRpcProvider(RPC_URL);
@@ -143,8 +143,8 @@ async function genContractAddress(addressArray, keyArray, threshold) {
   let safeAddress = await safeSdkOwner1.getAddress()
   
   console.log('Your Safe has been deployed:')
-  console.log(`https://goerli.etherscan.io/address/${safeAddress}`)
-  console.log(`https://app.safe.global/gor:${safeAddress}`)
+  console.log(`https://testnet.snowtrace.io/address/${safeAddress}`)
+  console.log(`https://app.safe.global/avax:${safeAddress}`)
 
   return safeAddress
 }

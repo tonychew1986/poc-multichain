@@ -75,7 +75,7 @@ Feature Readiness
 | Tron | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Polygon (Mumbai) | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
 | Solana | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Avalanche | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | &cross; | &cross; |
+| Avalanche | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
 | Ethereum Classic | :heavy_check_mark:      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Algorand | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Hedera | &cross;      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |

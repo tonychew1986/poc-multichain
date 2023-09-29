@@ -14,7 +14,7 @@ const { BIP32Factory } = require('bip32')
 // You must wrap a tiny-secp256k1 compatible implementation
 const bip32 = BIP32Factory(ecc)
 
-var RPC_URL = "https://goerli.infura.io/v3/fa926a9d3c2a4067af17c4df5b3d6079"
+var RPC_URL = "https://api.avax-test.network/ext/bc/C/rpc"
 const provider = new ethers.providers.JsonRpcProvider(RPC_URL);
 console.log("provider ", provider);
 
@@ -27,7 +27,7 @@ var mnemonic3 = "daughter slam polar summer boost end can mansion armor rotate b
 const rootPath = "m/44'/60'/0'";
 
 // let safeAddress = "0xe780BF709860bA04903398369Aa20903d39B1a0a";
-let safeAddress = "0xf38122004890ebEc2F2EC142175C2BeF5457ae70";
+let safeAddress = "0x12359Fc4DB31fc50e4bd3729E099e393e9C3569F";
 
 let amount = ethers.utils.parseEther("0.01", 'ether')
 
