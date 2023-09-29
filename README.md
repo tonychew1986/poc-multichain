@@ -75,7 +75,7 @@ Feature Readiness
 | Ethereum (Goerli) | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | Bitcoin Cash | :construction:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
 | Cosmos | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Binance Smart Chain | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | :heavy_check_mark: | &cross; | &cross; |
+| Binance Smart Chain | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
 | Dogecoin | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
 | Dash | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
 | Tron | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
