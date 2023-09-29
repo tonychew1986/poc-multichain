@@ -34,7 +34,7 @@ Feature Readiness
 
 | Blockchain        | Single Gen Address           | Single Coin Transfer | Single Token Transfer | Multi Gen Address           | Multi Coin Transfer | Multi Token Transfer |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|-----:|
-| <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" /> Bitcoin      | :heavy_check_mark: | &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; | :no_entry_sign: |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span>Bitcoin<span>      | :heavy_check_mark: | &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; | :no_entry_sign: |
 | Litecoin     | :heavy_check_mark:      |   &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
 | Ethereum | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | &cross; | &cross; | &cross; |
 | Bitcoin Cash | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
@@ -71,7 +71,7 @@ Feature Readiness
 
 | Blockchain        | Single Gen Address           | Single Coin Transfer | Single Token Transfer | Multi Gen Address           | Multi Coin Transfer | Multi Token Transfer |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|-----:|
-| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" /></span> <span>Bitcoin</span>      | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Bitcoin</span>      | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: |
 | Litecoin     | :heavy_check_mark:      |   &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; | :no_entry_sign: |
 | Ethereum (Goerli) | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | Bitcoin Cash | :construction:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
