@@ -98,7 +98,7 @@ Feature Readiness
 | Celo | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Harmony | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Aurora | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Fantom | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| Fantom | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
 | Near | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Linea | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 
