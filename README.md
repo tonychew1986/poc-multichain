@@ -66,6 +66,7 @@ Feature Readiness
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/6535.png" width="14px" /></span> <span>Near</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Linea</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1659.png" width="14px" /></span> <span>Gnosis</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Base</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 
 ## Testnet
 
@@ -103,6 +104,7 @@ Feature Readiness
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/6535.png" width="14px" /></span> <span>Near</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Linea</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1659.png" width="14px" /></span> <span>Gnosis</span> | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Base</span> | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
 
 
 ----------------
