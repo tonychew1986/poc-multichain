@@ -34,75 +34,75 @@ Feature Readiness
 
 | Blockchain        | Single Gen Address           | Single Coin Transfer | Single Token Transfer | Multi Gen Address           | Multi Coin Transfer | Multi Token Transfer |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|-----:|
-| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span>Bitcoin<span>      | :heavy_check_mark: | &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; | :no_entry_sign: |
-| Litecoin     | :heavy_check_mark:      |   &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
-| Ethereum | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | &cross; | &cross; | &cross; |
-| Bitcoin Cash | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
-| Cosmos | :construction:      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Binance Smart Chain | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; | &cross; | &cross; |
-| Dogecoin | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
-| Dash | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
-| Tron | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Polygon | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; | &cross; | &cross; |
-| Solana | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Avalanche | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Ethereum Classic | :heavy_check_mark:      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Algorand | :construction:      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Hedera | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Filecoin | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Arbitrum | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Aptos | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| TonCoin | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Optimism | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Sui | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Stellar | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Ripple | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Decred | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Nano | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Celo | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Harmony | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Aurora | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Fantom | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Near | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Linea | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Gnosis | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Bitcoin</span>      | :heavy_check_mark: | &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; | :no_entry_sign: |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Litecoin</span>     | :heavy_check_mark:      |   &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Ethereum</span> | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Bitcoin Cash</span> | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Cosmos</span> | :construction:      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Binance Smart Chain</span> | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Dogecoin</span> | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Dash</span> | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Tron</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Polygon</span> | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Solana</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Avalanche</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Ethereum Classic</span> | :heavy_check_mark:      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Algorand</span> | :construction:      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Hedera</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Filecoin</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Arbitrum</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Aptos</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>TonCoin</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Optimism</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Sui</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Stellar</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Ripple</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Decred</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Nano</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Celo</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Harmony</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Aurora</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Fantom</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Near</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Linea</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Gnosis</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 
 ## Testnet
 
 | Blockchain        | Single Gen Address           | Single Coin Transfer | Single Token Transfer | Multi Gen Address           | Multi Coin Transfer | Multi Token Transfer |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|-----:|
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Bitcoin</span>      | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: |
-| Litecoin     | :heavy_check_mark:      |   &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; | :no_entry_sign: |
-| Ethereum (Goerli) | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Bitcoin Cash | :construction:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
-| Cosmos | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Binance Smart Chain | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
-| Dogecoin | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
-| Dash | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
-| Tron | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Polygon (Mumbai) | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
-| Solana | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Avalanche | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
-| Ethereum Classic | :heavy_check_mark:      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Algorand | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Hedera | &cross;      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
-| Filecoin | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Arbitrum | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Aptos | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| TonCoin | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Optimism | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Sui | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Stellar | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Ripple | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Decred | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Nano | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Celo | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Harmony | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Aurora | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
-| Fantom | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
-| Near | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Linea | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Gnosis | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Litecoin</span>     | :heavy_check_mark:      |   &cross; | :no_entry_sign: | :heavy_check_mark: | &cross; | :no_entry_sign: |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Ethereum</span> | :heavy_check_mark:      |    :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Bitcoin Cash</span> | :construction:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Cosmos</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Binance Smart Chain</span> | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Dogecoin</span> | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Dash</span> | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Tron</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Polygon</span> | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Solana</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Avalanche</span> | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Ethereum Classic</span> | :heavy_check_mark:      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Algorand</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Hedera</span> | &cross;      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Filecoin</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Arbitrum</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Aptos</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>TonCoin</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Optimism</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Sui</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Stellar</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Ripple</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Decred</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Nano</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Celo</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Harmony</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Aurora</span> | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Fantom</span> | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Near</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Linea</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Gnosis</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 
 
 ----------------
