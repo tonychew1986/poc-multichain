@@ -14,8 +14,6 @@ const { BIP32Factory } = require('bip32')
 // You must wrap a tiny-secp256k1 compatible implementation
 const bip32 = BIP32Factory(ecc)
 
-
-
 var RPC_URL = "https://goerli.infura.io/v3/fa926a9d3c2a4067af17c4df5b3d6079"
 const provider = new ethers.providers.JsonRpcProvider(RPC_URL);
 console.log("provider ", provider);
@@ -38,12 +36,6 @@ async function main() {
     chainId = network.chainId;
     console.log('chainId ', chainId)
 
-    const ethAdapterProvider = new EthersAdapter({
-        ethers,
-        signerOrProvider: provider //provider //privateKey1
-    })
-    console.log("ethAdapterProvider ", ethAdapterProvider)
-
     let privateKey1 = genDerivationPrivateKey(mnemonic1, rootPath, "0/0")
     let privateKey2 = genDerivationPrivateKey(mnemonic2, rootPath, "0/0")
     let privateKey3 = genDerivationPrivateKey(mnemonic3, rootPath, "0/0")
@@ -59,9 +51,11 @@ async function main() {
     const address2 = await signer2.getAddress();
     const address3 = await signer3.getAddress();
 
-    isOwner(ethAdapterProvider, address1);
-    isOwner(ethAdapterProvider, address2);
-    isOwner(ethAdapterProvider, address3);
+    await isOwner(provider, safeAddress, address1);
+    await isOwner(provider, safeAddress, address2);
+    await isOwner(provider, safeAddress, address3);
+
+    await getOwner(provider, safeAddress);
     
     let balance1 = await getBalance(address1);
     let balance2 = await getBalance(address2);
@@ -70,97 +64,45 @@ async function main() {
     console.log('balance2 ', balance2)
     console.log('balanceContract ', balanceContract)
 
-    let unsignedTx = await genMultisigUnsignTx(ethAdapterProvider, safeAddress, '0x073b965F98734DaDd401c33dc55EbD36d232AF58', amount, "", "");
+    let unsignedTx = await genMultisigUnsignTx(provider, safeAddress, '0x073b965F98734DaDd401c33dc55EbD36d232AF58', amount, "", "");
     
+    let signedTxArray = [];
+    let signedTx;
+    signedTxArray.push(unsignedTx)
+
     console.log("---------------")
     console.log("first signing")
     console.log("---------------")
     if (balance1 > 0 || balance2 > 0) {
-        let signedTx1 = await genMultisigSignedTx(signer1, unsignedTx, safeAddress);
+        signedTx = await genMultisigSignedTx(signer1, signedTxArray[signedTxArray.length - 1], safeAddress);
+        signedTxArray.push(signedTx)
     }
     console.log("---------------")
     console.log("second signing")
     console.log("---------------")
+    console.log('signedTxArray ', signedTxArray)
 
-    // if (balance1 > 0 || balance2 > 0) {
-    //     let signedTx2 = await genSignedTx(signer2, signedTx1);
-    // }
+    if (balance1 > 0 || balance2 > 0) {
+        signedTx = await genMultisigSignedTx(signer2, signedTxArray[signedTxArray.length - 1], safeAddress);
+        signedTxArray.push(signedTx)
+    }
     
-    // let tx = await broadcastSignedTx(signedTx2);
-
-    // const Safe = SafeProtocol.default
-    // const safeSdk1 = await Safe.create({ ethAdapter: ethAdapter1, safeAddress })
-    // console.log("safeSdk1 ", safeSdk1)
-    // const safeSdk2 = await Safe.create({ ethAdapter: ethAdapter2, safeAddress })
-    // console.log("safeSdk2 ", safeSdk2)
-
-    // const safeTransaction = await safeSdk1.createTransaction({ safeTransactionData })
-    // console.log("safeTransaction ", safeTransaction)
-
-    // const txHash = await safeSdk1.getTransactionHash(safeTransaction)
-    // console.log("txHash ", txHash)
-
-    // const ownerAddresses = await safeSdk1.getOwnersWhoApprovedTx(txHash)
-    // console.log("ownerAddresses ", ownerAddresses)
-
-    // const safeAddress2 = await safeSdk1.getAddress()
-    // console.log("safeAddress2 ", safeAddress2)
-
-    // const isOwner = await safeSdk1.isOwner(signer1.getAddress())
-    // console.log("isOwner ", isOwner)
-
-    // const balance = await safeSdk1.getBalance()
-    // console.log("balance ", ethers.utils.formatEther(balance))
-
-    // const chainId2 = await safeSdk1.getChainId()
-    // console.log("chainId2 ", chainId2)
-
-    // const nonce = await safeSdk1.getNonce()
-    // console.log("nonce ", nonce)
-
-    // const ownerAddresses2 = await safeSdk1.getOwners()
-    // console.log("ownerAddresses2 ", ownerAddresses2)
-    // console.log('signer1 ', signer1.getAddress())
-
-    // const signedSafeTransaction1 = await safeSdk1.signTransaction(safeTransaction)
-    // console.log("signedSafeTransaction1 ", signedSafeTransaction1)
-    // console.log("signedSafeTransaction1 ", signedSafeTransaction1.signatures)
+    console.log('signedTxArray ', signedTxArray)
     
-    // const signedSafeTransaction2 = await safeSdk2.signTransaction(signedSafeTransaction1)
-    // console.log("signedSafeTransaction2 ", signedSafeTransaction2)
-    // console.log("signedSafeTransaction2 ", signedSafeTransaction2.signatures)
-
-    // let gasLimit = await provider.estimateGas({
-    //     from: signer1.getAddress(),
-    //     to: safeAddress,
-    //     value: safeAmount,
-    //     data: '0x'
-    // });
-
-    // const options = {
-    //     // from, // Optional
-    //     gasLimit: 200000, // Optional
-    //     gasPrice: ethers.utils.parseUnits('50', 'gwei'), // Optional
-    //     // maxFeePerGas, // Optional
-    //     // maxPriorityFeePerGas // Optional
-    //     // nonce // Optional
-    // }
-
-    // // on-chain
-    // // const txResponse = await safeSdk.approveTransactionHash(txHash, options)
-    // // console.log("txResponse ", txResponse)
-    // // await txResponse.transactionResponse?.wait()
-    // // console.log("txResponse ", txResponse)
-
-    // const txResponse2 = await safeSdk1.executeTransaction(signedSafeTransaction2)
-    // await txResponse2.transactionResponse?.wait()
-    // console.log("txResponse2 ", txResponse2)
+    let tx = await broadcastSignedTx(signer1, signedTxArray[signedTxArray.length - 1], safeAddress);
+    console.log('tx ', tx)
 }
 
 main()
 
 
-async function isOwner(ethAdapterProvider, address) {
+async function isOwner(provider, safeAddress, address) {
+    const ethAdapterProvider = new EthersAdapter({
+        ethers,
+        signerOrProvider: provider //provider //privateKey1
+    })
+    console.log("ethAdapterProvider ", ethAdapterProvider)
+
     const Safe = SafeProtocol.default
     const safeSdk = await Safe.create({ ethAdapter: ethAdapterProvider, safeAddress })
 
@@ -168,6 +110,22 @@ async function isOwner(ethAdapterProvider, address) {
     console.log("isOwner ", isOwner)
 
     return isOwner;
+}
+
+async function getOwner(provider, safeAddress) {
+    const ethAdapterProvider = new EthersAdapter({
+        ethers,
+        signerOrProvider: provider //provider //privateKey1
+    })
+    console.log("ethAdapterProvider ", ethAdapterProvider)
+
+    const Safe = SafeProtocol.default
+    const safeSdk = await Safe.create({ ethAdapter: ethAdapterProvider, safeAddress })
+
+    let ownerAddresses = await safeSdk.getOwners()
+    console.log("ownerAddresses ", ownerAddresses)
+
+    return ownerAddresses;
 }
 
 async function getBalance(sourceAddress) {
@@ -200,9 +158,15 @@ function genDerivationPrivateKey(mnemonic, rootPath, subPath) {
   return privateKey
 }
 
-async function genMultisigUnsignTx(ethAdapterProvider, sourceAddress, destinationAddress, amount, nonceProvided, gasPriceProvided, gasLimit = 250000) {
+async function genMultisigUnsignTx(provider, sourceAddress, destinationAddress, amount, nonceProvided, gasPriceProvided, gasLimit = 250000) {
     let gasPrice;
     let nonce;
+
+    const ethAdapterProvider = new EthersAdapter({
+        ethers,
+        signerOrProvider: provider //provider //privateKey1
+    })
+    console.log("ethAdapterProvider ", ethAdapterProvider)
 
     if (gasPriceProvided !== "") {
         gasPrice = gasPriceProvided
@@ -211,17 +175,15 @@ async function genMultisigUnsignTx(ethAdapterProvider, sourceAddress, destinatio
     }
     console.log('gasPrice ', gasPrice)
 
-    // if (nonceProvided !== "") {
-    //     nonce = nonceProvided
-    // } else {
-    //     nonce = await provider.getTransactionCount(sourceAddress, "latest");
-    // }
-    // console.log('nonce ', nonce)
-    // let safeAmount = ethers.utils.parseEther('0.01', 'ether'); //.toHexString()
-    // console.log("safeAmount ", ethers.utils.formatEther(safeAmount))
+    if (nonceProvided !== "") {
+        nonce = nonceProvided
+    } else {
+        nonce = await provider.getTransactionCount(sourceAddress, "latest");
+    }
+    console.log('nonce ', nonce)
     
     let safeTransactionData = {
-        to: '0x073b965F98734DaDd401c33dc55EbD36d232AF58',
+        to: destinationAddress,
         value: amount, //'<eth_value_in_wei>',
         data: '0x'
     }
@@ -235,23 +197,7 @@ async function genMultisigUnsignTx(ethAdapterProvider, sourceAddress, destinatio
     const txHash = await safeSdk.getTransactionHash(safeTransaction)
     console.log("txHash ", txHash)
 
-    // const unsignTx = {
-    //     nonce: nonce,
-    //     gasPrice: gasPrice.gasPrice,
-    //     gasLimit: gasLimit,
-    //     // EIP-1559 fields
-    //     // maxFeePerGas: gasPrice.maxFeePerGas,
-    //     // maxPriorityFeePerGas: gasPrice.maxPriorityFeePerGas,
-    //     to: destinationAddress,
-    //     value: amount,
-    //     // data: data,
-    //     chainId: chainId,
-    //     // EIP-2718
-    //     // type: 0
-    // }
-    // console.log("unsignTx ", unsignTx);
-
-    let unsignTx = safeTransactionData
+    let unsignTx = safeTransaction
 
     return unsignTx
 }
@@ -264,8 +210,10 @@ async function genMultisigSignedTx(signer, unsignTx, safeAddress) {
     console.log("ethAdapter ", ethAdapter)
     console.log("signer ", signer)
     
-    const Safe = SafeProtocol.default
-    const safeSdk = await Safe.create({ ethAdapter: ethAdapter, safeAddress })
+    console.log("unsignTx.signatures ", unsignTx.signatures)
+
+    let Safe = SafeProtocol.default
+    let safeSdk = await Safe.create({ ethAdapter: ethAdapter, safeAddress })
     console.log("safeSdk ", safeSdk)
     console.log("unsignTx ", unsignTx)
 
@@ -274,9 +222,10 @@ async function genMultisigSignedTx(signer, unsignTx, safeAddress) {
 
     const nonce = await safeSdk.getNonce()
     console.log("nonce ", nonce)
+    console.log("------------------")
+    console.log("------------------")
 
-    const ownerAddresses = await safeSdk.getOwners()
-    console.log("ownerAddresses ", ownerAddresses)
+    console.log("unsignTx ", unsignTx)
 
     const signedSafeTransaction = await safeSdk.signTransaction(unsignTx)
     console.log("signedSafeTransaction ", signedSafeTransaction)
@@ -294,8 +243,20 @@ async function genMultisigSignedTx(signer, unsignTx, safeAddress) {
     return signedTx;
 }
 
-async function broadcastSignedTx(signedTx) {
-    let broadcastTx = await provider.sendTransaction(signedTx)
+async function broadcastSignedTx(signer, signedTx, safeAddress) {
+    console.log('broadcastSignedTx');
+    console.log('signedTx ', signedTx);
+
+    const ethAdapter = new EthersAdapter({
+        ethers,
+        signerOrProvider: signer //provider //privateKey1
+    })
+
+    let Safe = SafeProtocol.default
+    let safeSdk = await Safe.create({ ethAdapter: ethAdapter, safeAddress })
+
+    let broadcastTx = await safeSdk.executeTransaction(signedTx)
+    await broadcastTx.transactionResponse?.wait()
     console.log('broadcastTx ', broadcastTx);
 
     return broadcastTx;

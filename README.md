@@ -73,7 +73,7 @@ Feature Readiness
 | Dogecoin | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
 | Dash | :heavy_check_mark:      |    &cross; | :no_entry_sign: | &cross; | &cross; | :no_entry_sign: |
 | Tron | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| Polygon (Mumbai) | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | :heavy_check_mark: | &cross; | &cross; |
+| Polygon (Mumbai) | :heavy_check_mark:      |    :heavy_check_mark: | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
 | Solana | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | Avalanche | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | &cross; | &cross; |
 | Ethereum Classic | :heavy_check_mark:      |    &cross; | &cross; | &cross; | &cross; | &cross; |
