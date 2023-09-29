@@ -69,7 +69,7 @@ Feature Readiness
 
 ## Testnet
 
-|         | Single Signature           ||| Multi Signature |||
+|   x      | Single Signature           |x|x| Multi Signature |x|x|
 | Blockchain        | Single Gen Address           | Single Coin Transfer | Single Token Transfer | Multi Gen Address           | Multi Coin Transfer | Multi Token Transfer |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|-----:|
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Bitcoin</span>      | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: | :heavy_check_mark: | :heavy_check_mark: | :no_entry_sign: |
