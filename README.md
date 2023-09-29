@@ -57,7 +57,7 @@ Feature Readiness
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/20947.png" width="14px" /></span> <span>Sui</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/512.png" width="14px" /></span> <span>Stellar</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/52.png" width="14px" /></span> <span>Ripple</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Decred</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1168.png" width="14px" /></span> <span>Decred</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1567.png" width="14px" /></span> <span>Nano</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/5567.png" width="14px" /></span> <span>Celo</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/3945.png" width="14px" /></span> <span>Harmony</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
@@ -94,7 +94,7 @@ Feature Readiness
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/20947.png" width="14px" /></span> <span>Sui</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/512.png" width="14px" /></span> <span>Stellar</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/52.png" width="14px" /></span> <span>Ripple</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Decred</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1168.png" width="14px" /></span> <span>Decred</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1567.png" width="14px" /></span> <span>Nano</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/5567.png" width="14px" /></span> <span>Celo</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/3945.png" width="14px" /></span> <span>Harmony</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
@@ -102,7 +102,7 @@ Feature Readiness
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/3513.png" width="14px" /></span> <span>Fantom</span> | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/6535.png" width="14px" /></span> <span>Near</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
 | <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" width="14px" /></span> <span>Linea</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
-| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1659.png" width="14px" /></span> <span>Gnosis</span> | &cross;      |    &cross; | &cross; | &cross; | &cross; | &cross; |
+| <span><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1659.png" width="14px" /></span> <span>Gnosis</span> | :heavy_check_mark:      |    &cross; | &cross; | :heavy_check_mark: | :heavy_check_mark: | &cross; |
 
 
 ----------------
