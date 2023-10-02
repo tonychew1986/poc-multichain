@@ -35,8 +35,8 @@ async function main() {
     let balance = await getBalance(sourceAddress);
     console.log('balance ', balance)
 
-    let balanceToken = await getContractBalance(sourceAddress, contract);
-    console.log('balanceToken ', balanceToken)
+    let balanceTokenContract = await getContractTokenBalance(sourceAddress, contract);
+    console.log('balanceTokenContract ', balanceTokenContract)
     
     if (balance > 0) {
         let unsignedTx = await genUnsignTx(chainId, sourceAddress, destinationAddress, amount, "", "");
@@ -47,12 +47,12 @@ async function main() {
 
 main()
 
-async function getContractBalance(sourceAddress, contract) {
-    let balanceToken = await contract.balanceOf(sourceAddress);
-    balanceToken = (balanceToken).toString()
-    console.log('balanceToken ', balanceToken)
+async function getContractTokenBalance(sourceAddress, contract) {
+    let balanceTokenContract = await contract.balanceOf(sourceAddress);
+    balanceTokenContract = (balanceTokenContract).toString()
+    console.log('balanceTokenContract ', balanceTokenContract)
 
-    return balanceToken;
+    return balanceTokenContract;
 }
 
 async function getBalance(sourceAddress) {

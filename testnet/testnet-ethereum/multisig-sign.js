@@ -28,6 +28,8 @@ const rootPath = "m/44'/60'/0'";
 
 // let safeAddress = "0xe780BF709860bA04903398369Aa20903d39B1a0a";
 let safeAddress = "0xf38122004890ebEc2F2EC142175C2BeF5457ae70";
+    
+let destinationAddress = "0x073b965F98734DaDd401c33dc55EbD36d232AF58";
 
 let amount = ethers.utils.parseEther("0.01", 'ether')
 
@@ -55,7 +57,7 @@ async function main() {
     await isOwner(provider, safeAddress, address2);
     await isOwner(provider, safeAddress, address3);
 
-    await getOwner(provider, safeAddress);
+    await getOwners(provider, safeAddress);
     
     let balance1 = await getBalance(address1);
     let balance2 = await getBalance(address2);
@@ -64,7 +66,7 @@ async function main() {
     console.log('balance2 ', balance2)
     console.log('balanceContract ', balanceContract)
 
-    let unsignedTx = await genMultisigUnsignTx(provider, safeAddress, '0x073b965F98734DaDd401c33dc55EbD36d232AF58', amount, "", "");
+    let unsignedTx = await genMultisigUnsignTx(provider, safeAddress, destinationAddress, amount, "", "");
     
     let signedTxArray = [];
     let signedTx;
@@ -112,7 +114,7 @@ async function isOwner(provider, safeAddress, address) {
     return isOwner;
 }
 
-async function getOwner(provider, safeAddress) {
+async function getOwners(provider, safeAddress) {
     const ethAdapterProvider = new EthersAdapter({
         ethers,
         signerOrProvider: provider //provider //privateKey1
@@ -262,6 +264,8 @@ async function broadcastSignedTx(signer, signedTx, safeAddress) {
     return broadcastTx;
 }
 
+exports.isOwner = isOwner;
+exports.getOwners = getOwners;
 exports.getBalance = getBalance;
 exports.getContractBalance = getContractBalance;
 exports.genDerivationPrivateKey = genDerivationPrivateKey;

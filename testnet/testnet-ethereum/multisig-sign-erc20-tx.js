@@ -38,140 +38,194 @@ var mnemonic2 = "outer unusual this swamp endorse wrong sauce dash camp argue me
 
 var mnemonic3 = "daughter slam polar summer boost end can mansion armor rotate bamboo scan skin offer earn sleep control maze message void fit artist speak swarm"
 
+const rootPath = "m/44'/60'/0'";
+
 // let safeAddress = "0xe780BF709860bA04903398369Aa20903d39B1a0a";
 let safeAddress = "0xf38122004890ebEc2F2EC142175C2BeF5457ae70";
+    
+let destinationAddress = "0x073b965F98734DaDd401c33dc55EbD36d232AF58";
 
 async function main() {
-    const rootPath = "m/44'/60'/0'";
-    const subPath = "0/0";
-    const fullPath = rootPath + subPath;
+    let network = await provider.getNetwork();
+    chainId = network.chainId;
+    console.log('chainId ', chainId)
+    // const subPath = "0/0";
+    // const fullPath = rootPath + subPath;
 
-    const hdNode1 = ethers.utils.HDNode.fromMnemonic(mnemonic1);
-    const hdNode2 = ethers.utils.HDNode.fromMnemonic(mnemonic2);
-    const hdNode3 = ethers.utils.HDNode.fromMnemonic(mnemonic3);
-    console.log("hdNode1 ", hdNode1);
-    console.log("hdNode2 ", hdNode2);
-    console.log("hdNode3 ", hdNode3);
-
-    const mnemonicWallet1 = hdNode1.derivePath(`m/44'/60'/0'/0/0`);
-    const mnemonicWallet2 = hdNode2.derivePath(`m/44'/60'/0'/0/0`);
-    const mnemonicWallet3 = hdNode3.derivePath(`m/44'/60'/0'/0/0`);
-    console.log("mnemonicWallet1 ", mnemonicWallet1);
-    console.log("mnemonicWallet2 ", mnemonicWallet2);
-    console.log("mnemonicWallet3 ", mnemonicWallet3);
-
-    const privateKey1 = mnemonicWallet1.privateKey;
-    const privateKey2 = mnemonicWallet2.privateKey;
-    const privateKey3 = mnemonicWallet3.privateKey;
-    console.log("privateKey1 ", privateKey1);
-    console.log("privateKey2 ", privateKey2);
-    console.log("privateKey3 ", privateKey3);
+    let privateKey1 = genDerivationPrivateKey(mnemonic1, rootPath, "0/0")
+    let privateKey2 = genDerivationPrivateKey(mnemonic2, rootPath, "0/0")
+    let privateKey3 = genDerivationPrivateKey(mnemonic3, rootPath, "0/0")
     
-
     const signer1 = new ethers.Wallet(privateKey1, provider);
     const signer2 = new ethers.Wallet(privateKey2, provider);
     const signer3 = new ethers.Wallet(privateKey3, provider);
     console.log('signer1 ', signer1)
-    console.log('signer1 ', signer1.getAddress())
+    console.log('signer2 ', signer2)
+    console.log('signer3 ', signer3)
 
-    var seed1 = bip39.mnemonicToSeedSync(mnemonic1) 
-    var seed2 = bip39.mnemonicToSeedSync(mnemonic2) 
-    var seed3 = bip39.mnemonicToSeedSync(mnemonic3) 
-    console.log("seed1 ", seed1);
-    console.log("seed2 ", seed2);
-    console.log("seed3 ", seed3);
+    const address1 = await signer1.getAddress();
+    const address2 = await signer2.getAddress();
+    const address3 = await signer3.getAddress();
 
-    const root1 = bip32.fromSeed(seed1)
-    const root2 = bip32.fromSeed(seed2)
-    const root3 = bip32.fromSeed(seed3)
-    console.log("root1 ", root1);
-    console.log("root2 ", root2);
-    console.log("root3 ", root3);
+    await isOwner(provider, safeAddress, address1);
+    await isOwner(provider, safeAddress, address2);
+    await isOwner(provider, safeAddress, address3);
 
-    var acct1 = root1.derivePath("m/44'/60'/0'");
-    var acct2 = root2.derivePath("m/44'/60'/0'");
-    var acct3 = root3.derivePath("m/44'/60'/0'");
-
-    const xpub1 = acct1.neutered().toBase58();
-    const xpub2 = acct2.neutered().toBase58();
-    const xpub3 = acct3.neutered().toBase58();
-    console.log("xpub1 ", xpub1);
-    console.log("xpub2 ", xpub2);
-    console.log("xpub3 ", xpub3);
-
-    const HDNode1 = ethers.utils.HDNode.fromExtendedKey(xpub1);
-    const HDNode2 = ethers.utils.HDNode.fromExtendedKey(xpub2);
-    const HDNode3 = ethers.utils.HDNode.fromExtendedKey(xpub3);
-    // const HDNode1 = ethers.HDNodeWallet.fromExtendedKey(xpub1);
-    // const HDNode2 = ethers.HDNodeWallet.fromExtendedKey(xpub2);
-    // const HDNode3 = ethers.HDNodeWallet.fromExtendedKey(xpub3);
-    console.log("HDNode1 ", HDNode1);
-    console.log("HDNode2 ", HDNode2);
-    console.log("HDNode3 ", HDNode3);
-
-
-    const address1_0 = HDNode1.derivePath("0/0");
-    const address2_0 = HDNode2.derivePath("0/0");
-    const address3_0 = HDNode3.derivePath("0/0");
-    console.log("address1_0 ", address1_0.address);
-    console.log("address2_0 ", address2_0.address);
-    console.log("address3_0 ", address3_0.address);
+    await getOwners(provider, safeAddress);
     
-    // const owner1Signer = new ethers.Wallet(privateKey1, provider)
-    const ethAdapter1 = new EthersAdapter({
-        ethers,
-        signerOrProvider: signer1 //provider //privateKey1
-    })
-    console.log("ethAdapter1 ", ethAdapter1)
+    let balance1 = await getBalance(address1);
+    let balance2 = await getBalance(address2);
+    let balanceContract = await getBalance(safeAddress);
+    let balanceTokenContract = await getContractTokenBalance(safeAddress, contract);
 
-    const ethAdapter2 = new EthersAdapter({
-        ethers,
-        signerOrProvider: signer2 //provider //privateKey1
-    })
-    console.log("ethAdapter2 ", ethAdapter2)
+    console.log('balance1 ', balance1)
+    console.log('balance2 ', balance2)
+    console.log('balanceContract ', balanceContract)
+    console.log('balanceTokenContract ', balanceTokenContract)
 
-    const chainId = await ethAdapter1.getChainId()
-    console.log("chainId ", chainId)
+    let amountToken = ethers.utils.parseUnits("1.0", 18);
+    let data = contract.interface.encodeFunctionData("transfer", [destinationAddress, amountToken] )
+    let unsignedTokenTx = await genMultisigTokenUnsignTx(provider, safeAddress, destinationAddress, amountToken, tokenContract, data, "", "");
+    
+    let signedTxArray = [];
+    let signedTx;
+    signedTxArray.push(unsignedTokenTx)
+
+    console.log("---------------")
+    console.log("first signing")
+    console.log("---------------")
+    if (balance1 > 0 || balance2 > 0) {
+        signedTx = await genMultisigSignedTx(signer1, signedTxArray[signedTxArray.length - 1], safeAddress);
+        signedTxArray.push(signedTx)
+    }
+    console.log("---------------")
+    console.log("second signing")
+    console.log("---------------")
+    console.log('signedTxArray ', signedTxArray)
+
+    if (balance1 > 0 || balance2 > 0) {
+        signedTx = await genMultisigSignedTx(signer2, signedTxArray[signedTxArray.length - 1], safeAddress);
+        signedTxArray.push(signedTx)
+    }
+    
+    console.log('signedTxArray ', signedTxArray)
+    
+    let tx = await broadcastSignedTx(signer1, signedTxArray[signedTxArray.length - 1], safeAddress);
+    console.log('tx ', tx)
+}
+
+main()
+
+
+async function isOwner(provider, safeAddress, address) {
+    const ethAdapterProvider = new EthersAdapter({
+        ethers,
+        signerOrProvider: provider //provider //privateKey1
+    })
+    console.log("ethAdapterProvider ", ethAdapterProvider)
 
     const Safe = SafeProtocol.default
-    const safeSdk1 = await Safe.create({ ethAdapter: ethAdapter1, safeAddress })
-    console.log("safeSdk1 ", safeSdk1)
-    const safeSdk2 = await Safe.create({ ethAdapter: ethAdapter2, safeAddress })
-    console.log("safeSdk2 ", safeSdk2)
+    const safeSdk = await Safe.create({ ethAdapter: ethAdapterProvider, safeAddress })
 
-    const safeAmount = ethers.utils.parseEther('0.01', 'ether'); //.toHexString()
-    console.log("safeAmount ", ethers.utils.formatEther(safeAmount))
+    let isOwner = await safeSdk.isOwner(address)
+    console.log("isOwner ", isOwner)
+
+    return isOwner;
+}
+
+async function getOwners(provider, safeAddress) {
+    const ethAdapterProvider = new EthersAdapter({
+        ethers,
+        signerOrProvider: provider //provider //privateKey1
+    })
+    console.log("ethAdapterProvider ", ethAdapterProvider)
+
+    const Safe = SafeProtocol.default
+    const safeSdk = await Safe.create({ ethAdapter: ethAdapterProvider, safeAddress })
+
+    let ownerAddresses = await safeSdk.getOwners()
+    console.log("ownerAddresses ", ownerAddresses)
+
+    return ownerAddresses;
+}
+
+async function getBalance(sourceAddress) {
+    let balance = await provider.getBalance(sourceAddress);
+    balance = ethers.utils.formatEther(balance)
+    console.log('balance ', balance)
+
+    return balance;
+}
+
+async function getContractTokenBalance(sourceAddress, contract) {
+    let balanceTokenContract = await contract.balanceOf(sourceAddress);
+    balanceTokenContract = (balanceTokenContract).toString()
+    console.log('balanceTokenContract ', balanceTokenContract)
+
+    return balanceTokenContract;
+}
+
+async function getContractBalance(sourceAddress, contract) {
+    let balanceToken = await contract.balanceOf(sourceAddress);
+    balanceToken = (balanceToken).toString()
+    console.log('balanceToken ', balanceToken)
+
+    return balanceToken;
+}
+
+function genDerivationPrivateKey(mnemonic, rootPath, subPath) {
+  let fullPath = rootPath + "/" + subPath;
+  let hdNode = ethers.utils.HDNode.fromMnemonic(mnemonic);
+  console.log("hdNode ", hdNode);
+
+  let mnemonicWallet = hdNode.derivePath(fullPath);
+  console.log("mnemonicWallet ", mnemonicWallet);
+
+  let privateKey = mnemonicWallet.privateKey;
+  console.log("privateKey ", privateKey);
+
+  return privateKey
+}
+
+async function genMultisigTokenUnsignTx(provider, sourceAddress, destinationAddress, amountToken, tokenContract, data, nonceProvided, gasPriceProvided, gasLimit = 250000) {
+    let gasPrice;
+    let nonce;
+
+    let network = await provider.getNetwork();
+    chainId = network.chainId;
+    console.log('chainId ', chainId)
+
+    const ethAdapterProvider = new EthersAdapter({
+        ethers,
+        signerOrProvider: provider //provider //privateKey1
+    })
+    console.log("ethAdapterProvider ", ethAdapterProvider)
+
+    if (gasPriceProvided !== "") {
+        gasPrice = gasPriceProvided
+    } else {
+        gasPrice = await provider.getFeeData()
+    }
+    console.log('gasPrice ', gasPrice)
+
+    if (nonceProvided !== "") {
+        nonce = nonceProvided
+    } else {
+        nonce = await provider.getTransactionCount(sourceAddress, "latest");
+    }
+    console.log('nonce ', nonce)
     
-    // const safeTransactionData = {
-    //     to: '0x073b965F98734DaDd401c33dc55EbD36d232AF58',
-    //     value: safeAmount, //'<eth_value_in_wei>',
-    //     data: '0x'
-    // }
-    let destinationAddress = "0x073b965F98734DaDd401c33dc55EbD36d232AF58";
-
-    const amountToken = ethers.utils.parseUnits("1.0", 18);
-    const data = contract.interface.encodeFunctionData("transfer", [destinationAddress, amountToken] )
 
     var gasPriceDerived  = await provider.getFeeData()
     console.log('gasPriceDerived ', gasPriceDerived)
 
     let gasLimitDerived = await provider.estimateGas({
-        from: safeAddress,
+        from: sourceAddress,
         to: tokenContract,
         value: ethers.utils.parseUnits("0.000", "ether"),
         data: data
     });
-
-    const options = {
-        // from, // Optional
-        gasLimit: gasLimitDerived, // Optional
-        gasPrice: gasPriceDerived, // Optional
-        // maxFeePerGas, // Optional
-        // maxPriorityFeePerGas // Optional
-        // nonce // Optional
-    }
-
-    const safeTransactionData = {
+    let safeTransactionData = {
         // nonce: txCount,
         gasPrice: gasPriceDerived.gasPrice,
         gasLimit: gasLimitDerived,
@@ -185,53 +239,102 @@ async function main() {
         // EIP-2718
         // type: 0
     }
-    console.log("safeTransactionData ", safeTransactionData)
-
-    const safeTransaction = await safeSdk1.createTransaction({ safeTransactionData })
+    
+    const Safe = SafeProtocol.default
+    const safeSdk = await Safe.create({ ethAdapter: ethAdapterProvider, safeAddress })
+    
+    const safeTransaction = await safeSdk.createTransaction({ safeTransactionData })
     console.log("safeTransaction ", safeTransaction)
 
-    const txHash = await safeSdk1.getTransactionHash(safeTransaction)
+    const txHash = await safeSdk.getTransactionHash(safeTransaction)
     console.log("txHash ", txHash)
 
-    const ownerAddresses = await safeSdk1.getOwnersWhoApprovedTx(txHash)
-    console.log("ownerAddresses ", ownerAddresses)
+    let unsignTx = safeTransaction
 
-    const safeAddress2 = await safeSdk1.getAddress()
-    console.log("safeAddress2 ", safeAddress2)
-
-    const isOwner = await safeSdk1.isOwner(signer1.getAddress())
-    console.log("isOwner ", isOwner)
-
-    const balance = await safeSdk1.getBalance()
-    console.log("balance ", ethers.utils.formatEther(balance))
-
-    const chainId2 = await safeSdk1.getChainId()
-    console.log("chainId2 ", chainId2)
-
-    const nonce = await safeSdk1.getNonce()
-    console.log("nonce ", nonce)
-
-    const ownerAddresses2 = await safeSdk1.getOwners()
-    console.log("ownerAddresses2 ", ownerAddresses2)
-    console.log('signer1 ', signer1.getAddress())
-
-    const signedSafeTransaction1 = await safeSdk1.signTransaction(safeTransaction)
-    console.log("signedSafeTransaction1 ", signedSafeTransaction1)
-    console.log("signedSafeTransaction1 ", signedSafeTransaction1.signatures)
-    
-    const signedSafeTransaction2 = await safeSdk2.signTransaction(signedSafeTransaction1)
-    console.log("signedSafeTransaction2 ", signedSafeTransaction2)
-    console.log("signedSafeTransaction2 ", signedSafeTransaction2.signatures)
-
-    // on-chain
-    // const txResponse = await safeSdk.approveTransactionHash(txHash, options)
-    // console.log("txResponse ", txResponse)
-    // await txResponse.transactionResponse?.wait()
-    // console.log("txResponse ", txResponse)
-
-    const txResponse2 = await safeSdk1.executeTransaction(signedSafeTransaction2)
-    await txResponse2.transactionResponse?.wait()
-    console.log("txResponse2 ", txResponse2)
+    return unsignTx
 }
 
-main()
+async function genMultisigSignedTx(signer, unsignTx, safeAddress) {
+    const ethAdapter = new EthersAdapter({
+        ethers,
+        signerOrProvider: signer //provider //privateKey1
+    })
+    console.log("ethAdapter ", ethAdapter)
+    console.log("signer ", signer)
+    
+    console.log("unsignTx.signatures ", unsignTx.signatures)
+
+    let Safe = SafeProtocol.default
+    let safeSdk = await Safe.create({ ethAdapter: ethAdapter, safeAddress })
+    console.log("safeSdk ", safeSdk)
+    console.log("unsignTx ", unsignTx)
+
+    const balance = await safeSdk.getBalance()
+    console.log("balance ", ethers.utils.formatEther(balance))
+
+    const nonce = await safeSdk.getNonce()
+    console.log("nonce ", nonce)
+    console.log("------------------")
+    console.log("------------------")
+
+    console.log("unsignTx ", unsignTx)
+
+    const signedSafeTransaction = await safeSdk.signTransaction(unsignTx)
+    console.log("signedSafeTransaction ", signedSafeTransaction)
+    console.log("signedSafeTransaction ", signedSafeTransaction.signatures)
+
+    const txHash = await safeSdk.getTransactionHash(signedSafeTransaction)
+    console.log("txHash ", txHash)
+
+    const ownerAddressesApprove = await safeSdk.getOwnersWhoApprovedTx(txHash)
+    console.log("ownerAddressesApprove ", ownerAddressesApprove)
+
+    let signedTx = signedSafeTransaction
+    console.log("signedTx ", signedTx)
+
+    return signedTx;
+}
+
+async function broadcastSignedTx(signer, signedTx, safeAddress) {
+    console.log('broadcastSignedTx');
+    console.log('signedTx ', signedTx);
+
+    const ethAdapter = new EthersAdapter({
+        ethers,
+        signerOrProvider: signer //provider //privateKey1
+    })
+
+    let Safe = SafeProtocol.default
+    let safeSdk = await Safe.create({ ethAdapter: ethAdapter, safeAddress })
+
+    let broadcastTx = await safeSdk.executeTransaction(signedTx)
+    await broadcastTx.transactionResponse?.wait()
+    console.log('broadcastTx ', broadcastTx);
+
+    return broadcastTx;
+}
+
+// const options = {
+//     // from, // Optional
+//     gasLimit: gasLimitDerived, // Optional
+//     gasPrice: gasPriceDerived, // Optional
+//     // maxFeePerGas, // Optional
+//     // maxPriorityFeePerGas // Optional
+//     // nonce // Optional
+// }
+
+// on-chain
+// const txResponse = await safeSdk.approveTransactionHash(txHash, options)
+// console.log("txResponse ", txResponse)
+// await txResponse.transactionResponse?.wait()
+// console.log("txResponse ", txResponse)
+
+exports.isOwner = isOwner;
+exports.getOwners = getOwners;
+exports.getBalance = getBalance;
+exports.getContractTokenBalance = getContractTokenBalance;
+exports.getContractBalance = getContractBalance;
+exports.genDerivationPrivateKey = genDerivationPrivateKey;
+exports.genMultisigTokenUnsignTx = genMultisigTokenUnsignTx;
+exports.genMultisigSignedTx = genMultisigSignedTx;
+exports.broadcastSignedTx = broadcastSignedTx;
